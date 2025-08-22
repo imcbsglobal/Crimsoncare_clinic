@@ -1,0 +1,155 @@
+.gallery {
+  padding: 11rem 2rem;
+  background: #f9f9f9;
+  text-align: center;
+
+  .gallery-header {
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #222;
+    }
+
+    p {
+      color: #555;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-6px);
+
+        img {
+          transform: scale(1.05);
+        }
+
+        .caption {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 0.5rem;
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        font-size: 0.9rem;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(100%);
+        transition: all 0.3s ease;
+      }
+    }
+  }
+
+  /* Lightbox Modal */
+  .lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    .lightbox-content {
+      position: relative;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      max-width: 90%;
+      max-height: 80%;
+      overflow: auto;
+
+      img {
+        max-width: 100%;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        color: #444;
+        margin-bottom: 1rem;
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #d9534f;
+        border: none;
+        color: #fff;
+        font-size: 1.2rem;
+        border-radius: 50%;
+        cursor: pointer;
+        padding: 0.3rem 0.6rem;
+
+        &:hover {
+          background: #c9302c;
+        }
+      }
+    }
+  }
+
+  .gallery-cta {
+    margin-top: 3rem;
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #222;
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .btn-primary {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #d9534f;
+      color: #fff;
+      font-weight: bold;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: #c9302c;
+      }
+    }
+  }
+}
