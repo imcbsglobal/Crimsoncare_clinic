@@ -1,15 +1,22 @@
-// App.jsx
-import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Gallery from "./pages/Gallery";
+import Contact from "./pages/Contact";
+import BookAppointment from "./pages/BookAppointment";
 
-import Navbar from "./components/Navbar.jsx";
-import Footer from "./components/Footer.jsx";
+// Service pages
+import LaserProctology from "./pages/LaserProctology";
+import GeneralSurgeries from "./pages/GeneralSurgeries";
+import Hidradenitis from "./pages/Hidradenitis";
+import AnalWartRemoval from "./pages/AnalWartRemoval"; 
+import VaricoseVeins from "./pages/VaricoseVeins";
+import Circumcisions from "./pages/Circumcisions";
+import LumpExcisions from "./pages/LumpExcisions";
+import DiabeticFoot from "./pages/DiabeticFoot";
 
-import Home from "./pages/Home.jsx";
-import About from "./pages/About.jsx";
-import Services from "./pages/Services.jsx";
-import Gallery from "./pages/Gallery.jsx";
-import Contact from "./pages/Contact.jsx";
+
 
 
 function App() {
@@ -17,16 +24,28 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        {/* ✅ Homepage shows ONLY Home */}
         <Route path="/" element={<Home />} />
-
-        {/* ✅ Standalone pages */}
         <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
+
+        {/* Services */}
+        <Route path="/laser-proctology" element={<LaserProctology />} />
+        <Route path="/general-surgeries" element={<GeneralSurgeries />} />
+        <Route path="/hidradentitis" element={<Hidradenitis />} />
+        <Route path="/anal-wart-removal" element={<AnalWartRemoval />} /> 
+        <Route path="/varicose-veins" element={<VaricoseVeins />} />
+        <Route path="/circumcisions" element={<Circumcisions />} />
+        <Route path="/lump-excisions" element={<LumpExcisions />} />
+        <Route path="/diabetic-foot" element={<DiabeticFoot />} />
+        <Route path="/book-appointment" element={<BookAppointment />} />
+
+
+
+
+
+        {/* add all other services here */}
       </Routes>
-      <Footer />
     </Router>
   );
 }

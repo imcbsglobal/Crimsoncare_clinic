@@ -1,6 +1,8 @@
 .about {
-  padding: 11rem 2rem;
-  background-color: #f9f9f9;
+  padding: 12rem 2rem;
+  /* ✨ Full-page background color/gradient */
+  background: linear-gradient(135deg, #e0f7fa, #e3f2fd);
+  min-height: 100vh; /* ensures full page coverage */
   color: #333;
 
   h1, h2, h3 {

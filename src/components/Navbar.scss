@@ -1326,6 +1326,14 @@ body {
     background: rgba(255, 255, 255, 0.95);
   }
 }
+// ✅ Ensure Link keeps button style
+.appointment-btn,
+.mobile-appointment-btn {
+  text-decoration: none !important; // no underline
+  color: $white !important;         // force white text
+  display: inline-block;            // keeps button box layout
+}
+
 
 // Improved contrast ratios for WCAG compliance
 @media (prefers-contrast: more) {
@@ -1352,6 +1360,13 @@ body {
     }
   }
 }
+// Topbar Book Appointment link fix
+.topbar .contact-item a {
+  text-decoration: none !important;  // remove underline
+  color: $white !important;          // make it white like other items
+  font-weight: 500;
+}
+
 
 // RTL support – expanded
 [dir="rtl"] {
@@ -1528,4 +1543,5 @@ body {
     }
   }
 }
+
 // End of SCSS file

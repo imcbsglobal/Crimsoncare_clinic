@@ -3,14 +3,16 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./Home.scss";
+import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 import heroImage from "../assets/doctors.jpg";  
 import doctorsTeamImage from "../assets/doctors-team.jpg";  
-import hospitalImage from "../assets/hospital.jpg";  // 🆕 add new image in assets
-import laserImage from "../assets/laser.jpg";      // 🆕 sample service images
+import hospitalImage from "../assets/hospital.jpg";  
+import laserImage from "../assets/laser.jpg";      
 import surgery from "../assets/surgery.jpg";
 import ward from "../assets/ward.jpg";
-import operatingTheatre from "../assets/operating-theatre.jpeg";      // 🆕 sample gallery images
+import operatingTheatre from "../assets/operating-theatre.jpeg";      
 import waitingRoom from "../assets/waiting-room.jpg";
 import nurse from "../assets/nurse.jpg";
 
@@ -20,34 +22,39 @@ const Home = () => {
   }, []);
 
   return (
-    <section id="home" className="hero">
-      {/* ---------- HERO ---------- */}
-      <div className="hero-content">
-        <div className="hero-text" data-aos="fade-up">
-          <h1>
-            Compassionate Care for <span>Piles Treatment</span>
-          </h1>
-          <p>
-            Your trusted partner for safe, advanced, and painless treatment of
-            piles, fissures, and fistula. Get world-class care with a
-            personalized approach.
-          </p>
-          <div className="hero-buttons">
-            <button className="btn-primary">Book Appointment</button>
-            <button className="btn-secondary">Call Now</button>
-          </div>
-          <div className="trust-badges">
-            <span>✔ 10,000+ Patients Treated</span>
-            <span>✔ 20+ Years Experience</span>
-            <span>✔ 24/7 Emergency Care</span>
-          </div>
-        </div>
+    <div className="home-page">   {/* ✅ Wrapper added for full background */}
 
-        {/* HERO IMAGE */}
-        <div className="hero-image" data-aos="fade-left">
-          <img src={heroImage} alt="Hospital Doctors" />
+      {/* ---------- HERO ---------- */}
+      <section id="home" className="hero">
+        <div className="hero-content">
+          <div className="hero-text" data-aos="fade-up">
+            <h1>
+              Compassionate Care for <span>Piles Treatment</span>
+            </h1>
+            <p>
+              Your trusted partner for safe, advanced, and painless treatment of
+              piles, fissures, and fistula. Get world-class care with a
+              personalized approach.
+            </p>
+            <div className="hero-buttons">
+              <Link to="/book-appointment">
+  <button className="btn-primary">Book Appointment</button>
+</Link>
+              <button className="btn-secondary">Call Now</button>
+            </div>
+            <div className="trust-badges">
+              <span>✔ 10,000+ Patients Treated</span>
+              <span>✔ 20+ Years Experience</span>
+              <span>✔ 24/7 Emergency Care</span>
+            </div>
+          </div>
+
+          {/* HERO IMAGE */}
+          <div className="hero-image" data-aos="fade-left">
+            <img src={heroImage} alt="Hospital Doctors" />
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* ---------- MINI ABOUT ---------- */}
       <div className="mini-about">
@@ -64,7 +71,7 @@ const Home = () => {
             <li>✅ Highly Skilled & Experienced Surgeons</li>
             <li>✅ 24/7 Patient Support</li>
           </ul>
-          <button className="btn-primary">Learn More</button>
+          {/* <button className="btn-primary">Learn More</button> */}
         </div>
 
         {/* MINI IMAGE */}
@@ -119,9 +126,29 @@ const Home = () => {
           <img src={waitingRoom} alt="Gallery 2" />
           <img src={nurse} alt="Gallery 3" />
         </div>
-        <button className="btn-secondary">View Full Gallery</button>
+        {/* <button className="btn-secondary">View Full Gallery</button> */}
       </div>
-    </section>
+        <div className="testimonials" data-aos="fade-up">
+        <h2>What Our Patients Say</h2>
+        <div className="testimonial-grid">
+          <div className="testimonial-card">
+            <p>"The doctors here are very professional and caring. My surgery was painless and recovery was fast!"</p>
+            <h4>- Rajesh K.</h4>
+          </div>
+          <div className="testimonial-card">
+            <p>"A very hygienic hospital with kind staff. I felt safe and well taken care of during my treatment."</p>
+            <h4>- Meena S.</h4>
+          </div>
+          <div className="testimonial-card">
+            <p>"Highly recommend PilesCare Hospital! The laser treatment was smooth and recovery was quick."</p>
+            <h4>- Arun M.</h4>
+          </div>
+        </div>
+      </div>
+
+      {/* ---------- FOOTER ---------- */}
+      <Footer />
+    </div>
   );
 };
 

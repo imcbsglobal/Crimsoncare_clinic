@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./Gallery.scss";
+import Footer from "../components/Footer";   // ⬅️ Import Footer
+
 import operatingTheatre from "../assets/operating-theatre.jpeg"; 
 import laserEquipment from "../assets/laser-equipment.jpeg"; 
 import patientRecovery from "../assets/patient-recovery.jpg"; 
@@ -8,6 +10,7 @@ import consultation from "../assets/consultation.jpg";
 import waitingRoom from "../assets/waiting-room.jpg"; 
 import canteen from "../assets/canteen.jpeg"; 
 import nurse from "../assets/nurse.jpg"; 
+
 const Gallery = () => {
   const images = [
     { src: operatingTheatre, caption: "Modern Operation Theater" },
@@ -23,50 +26,56 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <section id="gallery" className="gallery">
-      <div className="gallery-header" data-aos="fade-down">
-        <h2>Our Hospital & Facilities</h2>
-        <p>
-          Take a glimpse into <strong>PilesCare Hospital</strong>. We maintain a
-          world-class environment with state-of-the-art facilities to ensure
-          patient comfort and safety.
-        </p>
-      </div>
+    <div className="gallery-page">   {/* ✅ Wrapper for full background */}
 
-      <div className="gallery-grid">
-        {images.map((item, i) => (
-          <div
-            className="gallery-item"
-            data-aos="zoom-in"
-            data-aos-delay={i * 100}
-            key={i}
-            onClick={() => setSelectedImage(item)}
-          >
-            <img src={item.src} alt={item.caption} />
-            <div className="caption">{item.caption}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* Lightbox Modal */}
-      {selectedImage && (
-        <div className="lightbox" onClick={() => setSelectedImage(null)}>
-          <div className="lightbox-content" data-aos="zoom-in">
-            <img src={selectedImage.src} alt={selectedImage.caption} />
-            <p>{selectedImage.caption}</p>
-            <button className="close-btn" onClick={() => setSelectedImage(null)}>
-              ✖
-            </button>
-          </div>
+      <section id="gallery" className="gallery">
+        <div className="gallery-header" data-aos="fade-down">
+          <h2>Our Hospital & Facilities</h2>
+          <p>
+            Take a glimpse into <strong>PilesCare Hospital</strong>. We maintain a
+            world-class environment with state-of-the-art facilities to ensure
+            patient comfort and safety.
+          </p>
         </div>
-      )}
 
-      <div className="gallery-cta" data-aos="fade-up">
-        <h3>Visit Our Hospital</h3>
-        <p>Experience our advanced care facilities and patient-friendly environment.</p>
-        <button className="btn-primary">Book a Hospital Tour</button>
-      </div>
-    </section>
+        <div className="gallery-grid">
+          {images.map((item, i) => (
+            <div
+              className="gallery-item"
+              data-aos="zoom-in"
+              data-aos-delay={i * 100}
+              key={i}
+              onClick={() => setSelectedImage(item)}
+            >
+              <img src={item.src} alt={item.caption} />
+              <div className="caption">{item.caption}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Lightbox Modal */}
+        {selectedImage && (
+          <div className="lightbox" onClick={() => setSelectedImage(null)}>
+            <div className="lightbox-content" data-aos="zoom-in">
+              <img src={selectedImage.src} alt={selectedImage.caption} />
+              <p>{selectedImage.caption}</p>
+              <button className="close-btn" onClick={() => setSelectedImage(null)}>
+                ✖
+              </button>
+            </div>
+          </div>
+        )}
+
+        <div className="gallery-cta" data-aos="fade-up">
+          <h3>Visit Our Hospital</h3>
+          <p>Experience our advanced care facilities and patient-friendly environment.</p>
+          <button className="btn-primary">Book a Hospital Tour</button>
+        </div>
+      </section>
+
+      {/* ---------- FOOTER ---------- */}
+      <Footer />
+    </div>
   );
 };
 

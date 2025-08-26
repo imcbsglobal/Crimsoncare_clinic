@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import './Navbar.scss';
 
 const Navbar = () => {
@@ -16,16 +16,16 @@ const Navbar = () => {
   const toggleMobileMenu = () => setIsMobileMenuOpen(prev => !prev);
   const toggleServicesDropdown = () => setIsServicesDropdownOpen(prev => !prev);
 
-  // Services dropdown items
+  // ✅ Services dropdown items with paths
   const servicesItems = [
-    "LASER PROCTOLOGY",
-    "GENERAL&LAPROSCOPIC SURGERIES", 
-    "LASER TREATMENT FOR HIDRADENTITIS",
-    "ANAL WART REMOVAL",
-    "VARICOSE VEINS",
-    "CIRCUMCISIONS",
-    "LUMP EXCISIONS",
-    "DIABEIC FOOT& VARICOSE ULCERS CARE"
+    { label: "LASER PROCTOLOGY", path: "/laser-proctology" },
+    { label: "GENERAL & LAPAROSCOPIC SURGERIES", path: "/general-surgeries" },
+    { label: "LASER TREATMENT FOR HIDRADENITIS", path: "/hidradentitis" },
+    { label: "ANAL WART REMOVAL", path: "/anal-wart-removal" },
+    { label: "VARICOSE VEINS", path: "/varicose-veins" },
+    { label: "CIRCUMCISIONS", path: "/circumcisions" },
+    { label: "LUMP EXCISIONS", path: "/lump-excisions" },
+    { label: "DIABETIC FOOT & VARICOSE ULCERS CARE", path: "/diabetic-foot" }
   ];
 
   return (
@@ -36,7 +36,7 @@ const Navbar = () => {
           <div className="topbar-content">
             <div className="contact-info">
               <div className="contact-item">
-                <span>Book Appointment</span>
+                <Link to="/book-appointment">Book Appointment</Link>
               </div>
               <div className="contact-item">
                 <span>+91 7510700085</span>
@@ -71,9 +71,14 @@ const Navbar = () => {
                 { label: 'About', path: '/about' },
               ].map(({ label, path }) => (
                 <li key={label} className="nav-item">
-                  <Link to={path} className="nav-link">
+                  <NavLink 
+                    to={path} 
+                    className={({ isActive }) => 
+                      isActive ? "nav-link active" : "nav-link"
+                    }
+                  >
                     {label}
-                  </Link>
+                  </NavLink>
                 </li>
               ))}
               
@@ -90,13 +95,15 @@ const Navbar = () => {
                 {isServicesDropdownOpen && (
                   <div className="services-dropdown">
                     {servicesItems.map((service, index) => (
-                      <Link 
+                      <NavLink 
                         key={index} 
-                        to={`/services#${service.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="dropdown-item"
+                        to={service.path}  
+                        className={({ isActive }) =>
+                          isActive ? "dropdown-item active" : "dropdown-item"
+                        }
                       >
-                        {service}
-                      </Link>
+                        {service.label}
+                      </NavLink>
                     ))}
                   </div>
                 )}
@@ -107,9 +114,14 @@ const Navbar = () => {
                 { label: 'Contact Us', path: '/contact' },
               ].map(({ label, path }) => (
                 <li key={label} className="nav-item">
-                  <Link to={path} className="nav-link">
+                  <NavLink 
+                    to={path} 
+                    className={({ isActive }) => 
+                      isActive ? "nav-link active" : "nav-link"
+                    }
+                  >
                     {label}
-                  </Link>
+                  </NavLink>
                 </li>
               ))}
             </ul>
@@ -119,7 +131,9 @@ const Navbar = () => {
               <button className="search-btn" aria-label="Search">
                 <i className="fas fa-search" />
               </button>
-              <button className="appointment-btn">Book Appointment</button>
+              <Link to="/book-appointment" className="appointment-btn">
+                Book Appointment
+              </Link>
             </div>
 
             {/* Hamburger */}
@@ -142,7 +156,6 @@ const Navbar = () => {
                 { label: 'About', path: '/about' },
                 { 
                   label: 'Services', 
-                  path: '/services',
                   isDropdown: true,
                   items: servicesItems
                 },
@@ -163,26 +176,37 @@ const Navbar = () => {
                       </div>
                       <div className={`mobile-dropdown-content mobile-dropdown-content-${item.label.toLowerCase()}`}>
                         {item.items.map((service, index) => (
-                          <Link 
+                          <NavLink 
                             key={index} 
-                            to={`/services#${service.toLowerCase().replace(/\s+/g, '-')}`}
+                            to={service.path}
                             onClick={toggleMobileMenu}
+                            className={({ isActive }) =>
+                              isActive ? "active" : ""
+                            }
                           >
-                            {service}
-                          </Link>
+                            {service.label}
+                          </NavLink>
                         ))}
                       </div>
                     </div>
                   ) : (
-                    <Link to={item.path} onClick={toggleMobileMenu}>
+                    <NavLink 
+                      to={item.path} 
+                      onClick={toggleMobileMenu}
+                      className={({ isActive }) => 
+                        isActive ? "active" : ""
+                      }
+                    >
                       {item.label}
-                    </Link>
+                    </NavLink>
                   )}
                 </li>
               ))}
             </ul>
             <div className="mobile-actions">
-              <button className="mobile-appointment-btn">Book Appointment</button>
+              <Link to="/book-appointment" onClick={toggleMobileMenu} className="mobile-appointment-btn">
+                Book Appointment
+              </Link>
             </div>
           </div>
         </nav>

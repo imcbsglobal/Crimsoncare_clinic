@@ -1,0 +1,175 @@
+/* ---------- FULL PAGE BACKGROUND ---------- */
+.service-page {
+  background: linear-gradient(135deg, #e0f7fa, #e3f2fd);  /* ✅ Gradient applied */
+  min-height: 100vh;
+  width: 100%;
+
+  /* Banner Hero */
+  .service-banner {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 85vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .overlay {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.55); /* dark overlay */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+
+      h1 {
+        font-size: 3rem;
+        color: #fff;
+        font-weight: 700;
+      }
+
+      p {
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        color: #f3f4f6;
+        max-width: 750px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  /* Content Section */
+  .service-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 4rem 1rem;
+    align-items: flex-start;
+    background: transparent;   /* ✅ so gradient shows */
+
+    .text-box {
+      flex: 1.2;
+
+      h2, h3 {
+        margin-top: 1rem;
+        color: #1e293b;
+      }
+
+      .styled-list {
+        margin: 1rem 0;
+        padding-left: 1.5rem;
+
+        li {
+          margin: 0.5rem 0;
+          font-size: 1.05rem;
+          color: #374151;
+        }
+      }
+
+      .cta-box {
+        margin-top: 2rem;
+        padding: 1.5rem;
+        background: #f9fafb;
+        border-left: 5px solid #3b82f6;
+        border-radius: 0.75rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        h3 {
+          margin-bottom: 0.5rem;
+        }
+
+        .btn-primary {
+          margin-top: 1rem;
+          background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+          color: white;
+          padding: 0.75rem 1.5rem;
+          border: none;
+          border-radius: 0.5rem;
+          cursor: pointer;
+          font-size: 1rem;
+          font-weight: 600;
+          transition: background 0.3s ease;
+          text-decoration: none !important; // removes underline if <Link>
+          color: white !important;          // keeps button text white
+          display: inline-block;  
+
+          &:hover {
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
+          }
+        }
+      }
+    }
+
+    .image-box {
+      flex: 0.8;
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 1rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.03);
+        }
+      }
+    }
+  }
+
+  /* Extra Info */
+  .extra-info {
+    background: transparent;   /* ✅ let gradient show behind */
+    padding: 3rem 1rem;
+    text-align: center;
+
+    h2 {
+      margin-bottom: 2rem;
+      color: #111827;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+
+      .info-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+
+        i {
+          font-size: 2rem;
+          color: #3b82f6;
+          margin-bottom: 0.75rem;
+        }
+
+        h4 {
+          margin-bottom: 0.5rem;
+          color: #1f2937;
+        }
+
+        p {
+          font-size: 0.95rem;
+          color: #4b5563;
+        }
+      }
+    }
+  }
+}
