@@ -17,7 +17,7 @@
     h2 {
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
-      color: #c2181e;
+      color: #000000;
     }
     p {
       color: #444;
@@ -45,7 +45,7 @@
     gap: 1.5rem;
 
     .info-card {
-      background: linear-gradient(135deg, #f8bbd0, #f48fb1);
+      background: linear-gradient(135deg, #ec407a, #d81b60);
       padding: 2rem;
       border-radius: 20px;
       text-align: center;
@@ -166,7 +166,8 @@
 
   /* CALL TO ACTION */
   .contact-cta {
-    background: linear-gradient(135deg, #f48fb1, #f06292);
+    background: linear-gradient(135deg, #ec407a, #d81b60);
+
     padding: 3rem;
     border-radius: 20px;
     max-width: 700px;

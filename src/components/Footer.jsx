@@ -72,7 +72,7 @@ const Footer = () => {
         <div className="footer__bottom">
           <p>© Crimson Care, All rights reserved.</p>
           <span>
-            Designed by <a href="#">Zyberry</a> | Distributed by <a href="#">Team Zyberry</a>
+            Designed by <a href="#">IMC</a> | Distributed by <a href="#">Team IMC</a>
           </span>
         </div>
       </div>

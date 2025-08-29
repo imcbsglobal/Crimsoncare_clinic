@@ -70,7 +70,7 @@ const Contact = () => {
             <div className="info-card">
               <i className="fas fa-map-marker-alt"></i>
               <h4>Visit Us</h4>
-              <p>123 Health Street, Kochi, Kerala</p>
+              <p>Near Medical College Kozhikode</p>
             </div>
           </div>
 
@@ -117,16 +117,18 @@ const Contact = () => {
 
         {/* Map */}
         <div className="map" data-aos="zoom-in">
-          <iframe
-            title="Hospital Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.2950283543!2d76.2673!3d9.9312"
-            width="100%"
-            height="350"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-          />
-        </div>
+  <iframe
+    title="Hospital Location"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3912.9376119778194!2d75.81284577481247!3d11.265996488914146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65b0011d46f79%3A0x1869b0abc95b8c0a!2sCRIMSON%20HEALTH%20CARE%20SOLUTUONS%2C%203RD%20FLOOR%2C%20CK%20TOWER!5e0!3m2!1sen!2sin!4v1756448266296!5m2!1sen!2sin"
+    width="100%"
+    height="350"
+    style={{ border: 0 }}
+    allowFullScreen=""
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  ></iframe>
+</div>
+
 
         {/* Social Media */}
         <div className="social-media" data-aos="fade-up">

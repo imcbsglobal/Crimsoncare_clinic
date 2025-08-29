@@ -97,9 +97,9 @@ const BookAppointment = () => {
 
             <h3>Opening Hours</h3>
             <ul className="opening-hours">
-              <li><FaClock /> Mon - Fri: 9:00 AM - 8:00 PM</li>
-              <li><FaClock /> Saturday: 10:00 AM - 6:00 PM</li>
-              <li><FaClock /> Sunday: Closed</li>
+              <li><FaClock /> Mon - Sat: 9:00 AM - 7:00 PM</li>
+              <li><FaClock /> Sunday: 9:00 AM - 7:00 PM</li>
+            
             </ul>
           </div>
         </div>

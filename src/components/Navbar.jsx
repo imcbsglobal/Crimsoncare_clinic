@@ -128,9 +128,9 @@ const Navbar = () => {
 
             {/* Actions */}
             <div className="navbar-actions">
-              <button className="search-btn" aria-label="Search">
+              {/* <button className="search-btn" aria-label="Search">
                 <i className="fas fa-search" />
-              </button>
+              </button> */}
               <Link to="/book-appointment" className="appointment-btn">
                 Book Appointment
               </Link>

@@ -24,6 +24,13 @@ const Home = () => {
   return (
     <div className="home-page">   {/* ✅ Wrapper added for full background */}
 
+      {/* ---------- TOP BANNER ---------- */}
+      <section className="top-banner">
+        <div className="banner-overlay">
+          <h1>Welcome to <span>Crimsoncare Clinics</span></h1>
+        </div>
+      </section>
+
       {/* ---------- HERO ---------- */}
       <section id="home" className="hero">
         <div className="hero-content">
@@ -38,8 +45,8 @@ const Home = () => {
             </p>
             <div className="hero-buttons">
               <Link to="/book-appointment">
-  <button className="btn-primary">Book Appointment</button>
-</Link>
+                <button className="btn-primary">Book Appointment</button>
+              </Link>
               <button className="btn-secondary">Call Now</button>
             </div>
             <div className="trust-badges">
@@ -71,7 +78,6 @@ const Home = () => {
             <li>✅ Highly Skilled & Experienced Surgeons</li>
             <li>✅ 24/7 Patient Support</li>
           </ul>
-          {/* <button className="btn-primary">Learn More</button> */}
         </div>
 
         {/* MINI IMAGE */}
@@ -126,9 +132,10 @@ const Home = () => {
           <img src={waitingRoom} alt="Gallery 2" />
           <img src={nurse} alt="Gallery 3" />
         </div>
-        {/* <button className="btn-secondary">View Full Gallery</button> */}
       </div>
-        <div className="testimonials" data-aos="fade-up">
+
+      {/* ---------- TESTIMONIALS ---------- */}
+      <div className="testimonials" data-aos="fade-up">
         <h2>What Our Patients Say</h2>
         <div className="testimonial-grid">
           <div className="testimonial-card">

@@ -14,8 +14,9 @@ const About = () => {
           <div className="text" data-aos="fade-right">
             <h1>About PilesCare Hospital</h1>
             <p>
-              Providing advanced, compassionate treatment for piles, fissures, and fistulas — 
-              trusted by over 10,000 patients across India.
+              Providing advanced, compassionate treatment for piles, fissures, and fistulas — trusted by over 10,000 patients across India.
+              PilesCare Hospital is committed to delivering high-quality healthcare with modern facilities, expert doctors, and patient-centered care.
+               Our mission is to provide safe, compassionate, and affordable treatment for all.
             </p>
           </div>
           <div className="image" data-aos="fade-left">
