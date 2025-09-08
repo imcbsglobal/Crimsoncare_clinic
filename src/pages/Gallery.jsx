@@ -10,6 +10,8 @@ import consultation from "../assets/consultation.jpg";
 import waitingRoom from "../assets/waiting-room.jpg"; 
 import canteen from "../assets/canteen.jpeg"; 
 import nurse from "../assets/nurse.jpg"; 
+import ambulance from "../assets/ambulance.jpg";      // ✅ New
+import cafeteria from "../assets/cafeteria.jpg";      // ✅ New
 
 const Gallery = () => {
   const images = [
@@ -20,7 +22,9 @@ const Gallery = () => {
     { src: consultation, caption: "Specialized Consultation Room" },
     { src: waitingRoom, caption: "Spacious Waiting Area" },
     { src: canteen, caption: "Hygienic Canteen Facility" },
-    { src: nurse, caption: "Friendly Nursing Staff" }
+    { src: nurse, caption: "Friendly Nursing Staff" },
+    { src: ambulance, caption: "Emergency Ambulance Service" },   // ✅ Added
+    { src: cafeteria, caption: "Comfortable Cafeteria" }          // ✅ Added
   ];
 
   const [selectedImage, setSelectedImage] = useState(null);

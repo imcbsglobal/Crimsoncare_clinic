@@ -5,6 +5,10 @@ import About from "./pages/About";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import BookAppointment from "./pages/BookAppointment";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+
 
 // Service pages
 import LaserProctology from "./pages/LaserProctology";
