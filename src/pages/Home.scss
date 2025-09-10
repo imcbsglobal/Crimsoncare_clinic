@@ -17,81 +17,102 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 11rem 8%;
-  background: linear-gradient(135deg, #e63946, #f1faee);
+  justify-content: center;
+  padding: 13rem 10%;
+  height: 99vh;
+  background: url("../assets/welcome-banner.jpg") center center/cover no-repeat;
   color: white;
   overflow: hidden;
+  text-align: center;
 
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.35);
+    background: rgba(0, 0, 0, 0.35);
     z-index: 1;
   }
 
   .hero-content {
-    max-width: 600px;
+    max-width: 700px;
     z-index: 2;
 
     h1 {
-      font-size: 3rem;
+      font-size: 3.2rem;
       span { color: #ffb703; }
     }
 
     p {
-      margin: 1rem 0 2rem;
-      font-size: 1.1rem;
+      margin: 1rem 0 2.2rem;
+      font-size: 1.15rem;
     }
 
     .hero-buttons {
       display: flex;
-      gap: 1rem;
+      justify-content: center;
+      gap: 1.2rem;
 
       .btn-primary {
         background: #ffb703;
         border: none;
-        padding: 0.8rem 1.5rem;
+        padding: 1rem 1.8rem;
         border-radius: 50px;
         font-weight: 600;
         transition: all 0.3s;
         &:hover { background: #fb8500; }
       }
-
-      .btn-secondary {
-        background: transparent;
-        border: 2px solid white;
-        padding: 0.8rem 1.5rem;
-        border-radius: 50px;
-        font-weight: 600;
-        transition: all 0.3s;
-        &:hover { background: white; color: #e63946; }
-      }
     }
 
     .trust-badges {
-      margin-top: 2rem;
+      margin-top: 2.5rem;
       display: flex;
-      gap: 1.2rem;
+      gap: 1.4rem;
       flex-wrap: wrap;
-      font-size: 0.95rem;
+      justify-content: center;
+      font-size: 1rem;
     }
   }
+}
 
-  .hero-image {
-    z-index: 2;
-    img {
-      width: 450px;
-      border-radius: 1rem;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+/* 🔽 Tablet & small laptops */
+@media (max-width: 768px) {
+  .hero {
+    padding: 8rem 3rem;
+
+    .hero-content {
+      max-width: 100%;
+
+      h1 {
+        font-size: 2.3rem;
+        line-height: 1.4;
+      }
+
+      p { font-size: 1.05rem; }
+
+      .trust-badges {
+        font-size: 0.9rem;
+      }
     }
+  }
+}
+
+/* 🔽 Mobile screens */
+/* ---------- HERO MOBILE FIX ---------- */
+@media (max-width: 768px) {
+  .hero {
+    /* shrink the huge desktop padding */
+    padding: 16rem 1rem 4rem;   /* top | sides | bottom */
+  }
+
+  /* keep the text block breathing */
+  .hero-content {
+    padding: 0 0.5rem;
   }
 }
 
 /* ---------- WHY US ---------- */
 .why-us {
   padding: 4rem 8%;
-  background: #fff;
+  background: linear-gradient(135deg, #f8faff, #edf2fb); /* 🔹 soft blue gradient */
 
   .why-grid {
     display: grid;
@@ -114,17 +135,14 @@
       margin-bottom: 1rem;
     }
 
-    &:hover {
-      transform: translateY(-5px);
-    }
+    &:hover { transform: translateY(-5px); }
   }
 }
 
 /* ---------- SERVICES ---------- */
-/* ---------- SERVICES ---------- */
 .services-preview {
   padding: 3rem 8%;
-  background: #fdfdfd;
+  background: linear-gradient(135deg, #ffffff, #f9f9fb); /* 🔹 clean white-gray gradient */
 
   h2 {
     text-align: center;
@@ -159,10 +177,7 @@
       color: #e63946;
     }
 
-    p {
-      font-size: 0.95rem;
-      color: #555;
-    }
+    p { font-size: 0.95rem; color: #555; }
 
     &:hover {
       transform: translateY(-6px);
@@ -174,7 +189,7 @@
 /* ---------- GALLERY ---------- */
 .gallery-preview {
   padding: 3rem 8%;
-  background: #f9fafc;
+  background: #f7f7f7; /* 🔹 plain light gray */
 
   h2 {
     text-align: center;
@@ -194,18 +209,15 @@
       border-radius: 1rem;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
       transition: transform 0.3s;
-      &:hover {
-        transform: scale(1.05);
-      }
+      &:hover { transform: scale(1.05); }
     }
   }
 }
 
-
 /* ---------- ACHIEVEMENTS ---------- */
 .achievements {
   padding: 3rem 8%;
-  background: linear-gradient(135deg, #f9fafc, #eaf4ff); /* 🔥 light theme */
+  background: linear-gradient(135deg, #eaf4ff, #edf6f9); /* 🔹 pastel blue/teal */
   color: #1d3557;
   text-align: center;
 
@@ -243,17 +255,13 @@
         margin: 0.3rem 0;
       }
 
-      p {
-        font-size: 0.95rem;
-        color: #444;
-      }
+      p { font-size: 0.95rem; color: #444; }
 
       &:hover {
         transform: translateY(-6px);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
       }
 
-      /* Different accent colors */
       &.blue h3 { color: #0077b6; }
       &.green h3 { color: #2a9d8f; }
       &.orange h3 { color: #f77f00; }
@@ -262,12 +270,68 @@
   }
 }
 
+/* ---------- VALUES & AWARDS ---------- */
+.values-awards {
+  padding: 4rem 8%;
+  background: linear-gradient(135deg, #fff8f0, #fff); /* 🔹 subtle warm gradient */
 
+  h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1d3557;
+  }
+
+  .values-awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+
+    .card {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 1rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+
+      i {
+        font-size: 2.2rem;
+        color: #e63946;
+        margin-bottom: 1rem;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.8rem;
+        color: #1d3557;
+      }
+
+      p { font-size: 0.95rem; color: #555; }
+
+      &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      &.award {
+        background: linear-gradient(135deg, #fceabb, #f8b500);
+        color: #1d3557;
+
+        i { color: #fff; }
+        h3 { color: #fff; }
+        p { color: #fdfdfd; }
+      }
+    }
+  }
+}
 
 /* ---------- TESTIMONIALS ---------- */
 .testimonials {
   padding: 4rem 8%;
-  background: #f8f9fa;
+  background: linear-gradient(135deg, #f9fafc, #f1f5f9); /* 🔹 light gray-blue */
   text-align: center;
 
   .testimonial-slider {
@@ -287,45 +351,26 @@
         margin-bottom: 1rem;
       }
 
-      h4 {
-        font-weight: 600;
-      }
+      h4 { font-weight: 600; }
 
-      &.pink {
-        background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
-      }
-
-      &.blue {
-        background: linear-gradient(135deg, #4facfe, #00f2fe);
-      }
-
-      &.green {
-        background: linear-gradient(135deg, #43e97b, #38f9d7);
-      }
-
-      &.purple {
-        background: linear-gradient(135deg, #9d50bb, #6e48aa);
-      }
+      &.pink { background: linear-gradient(135deg, #ff6b6b, #ff8e8e); }
+      &.blue { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+      &.green { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+      &.purple { background: linear-gradient(135deg, #9d50bb, #6e48aa); }
     }
   }
 
   .slick-dots {
     bottom: -35px;
-    li button:before {
-      font-size: 12px;
-      color: #888;
-    }
-    li.slick-active button:before {
-      color: #e63946;
-    }
+    li button:before { font-size: 12px; color: #888; }
+    li.slick-active button:before { color: #e63946; }
   }
 }
-
 
 /* ---------- CTA ---------- */
 .cta {
   padding: 4rem 8%;
-  background: linear-gradient(135deg,#e63946,#ffb703);
+  background: linear-gradient(135deg,#e63946,#ffb703); /* 🔥 bold accent gradient */
   color: white;
   text-align: center;
 

@@ -1,6 +1,6 @@
 /* ---------- FULL PAGE BACKGROUND ---------- */
 .service-page {
-  background: linear-gradient(135deg, #e0f7fa, #e3f2fd);  /* ✅ Gradient applied */
+  background: #ffffff;  /* ✅ Gradient applied */
   min-height: 100vh;
   width: 100%;
 
@@ -9,7 +9,7 @@
     position: relative;
     background-size: cover;
     background-position: center;
-    height: 85vh;
+    height: 98vh;
     min-height: 400px;
     display: flex;
     align-items: center;
@@ -97,8 +97,8 @@
           font-size: 1rem;
           font-weight: 600;
           transition: background 0.3s ease;
-          text-decoration: none !important; // removes underline if <Link>
-          color: white !important;          // keeps button text white
+          text-decoration: none !important;
+          color: white !important;
           display: inline-block;  
 
           &:hover {
@@ -129,7 +129,7 @@
 
   /* Extra Info */
   .extra-info {
-    background: transparent;   /* ✅ let gradient show behind */
+    background: transparent;
     padding: 3rem 1rem;
     text-align: center;
 
@@ -170,6 +170,52 @@
           color: #4b5563;
         }
       }
+    }
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 768px) {
+    .service-banner .overlay h1 {
+      font-size: 2rem;
+    }
+
+    .service-banner .overlay p {
+      font-size: 1rem;
+    }
+
+    .service-content {
+      flex-direction: column;
+      padding: 3rem 1.5rem;
+      text-align: center;
+
+      .text-box {
+        order: 2;
+      }
+
+      .image-box {
+        order: 1;
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+
+    .extra-info {
+      padding: 2rem 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .service-banner .overlay h1 {
+      font-size: 1.6rem;
+    }
+
+    .service-banner .overlay p {
+      font-size: 0.9rem;
+    }
+
+    .service-content {
+      padding: 2.5rem 1rem;
     }
   }
 }

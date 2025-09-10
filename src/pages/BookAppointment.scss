@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: linear-gradient(135deg, #f0f7ff, #e6f0ff);
+  background: #ffffff; 
 }
 
 .book-appointment-page {
@@ -123,4 +123,35 @@
 .contact-list li svg,
 .opening-hours li svg {
   color: #3b82f6;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .book-appointment-page {
+    padding: 13rem 1.5rem 5rem; /* more padding for mobile */
+  }
+
+  .appointment-form,
+  .contact-info-section {
+    padding: 1.5rem; /* reduce padding inside */
+  }
+
+  .page-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-appointment-page {
+    padding: 14rem 1rem 5rem; /* extra top padding for small screens */
+  }
+
+  .appointment-form,
+  .contact-info-section {
+    padding: 1.2rem;
+  }
+
+  .page-title {
+    font-size: 1.6rem;
+  }
 }

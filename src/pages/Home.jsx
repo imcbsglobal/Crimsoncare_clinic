@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Slider from "react-slick";
 
-import heroImage from "../assets/doctors.jpg";
 import doctorsTeamImage from "../assets/doctors-team.jpg";
 import hospitalImage from "../assets/hospital.jpg";
 import laserImage from "../assets/laser.jpg";
@@ -47,7 +46,7 @@ const Home = () => {
         <div className="hero-content" data-aos="fade-up">
           <h1>
             Advanced <span>Piles & Fissure</span> Treatments
-          </h1>
+          </h1> 
           <p>
             Premium healthcare with the latest technology, compassionate doctors,
             and painless procedures. Trusted by 10,000+ patients.
@@ -56,16 +55,12 @@ const Home = () => {
             <Link to="/book-appointment">
               <button className="btn-primary">Book Appointment</button>
             </Link>
-            <button className="btn-secondary">Watch Video</button>
           </div>
           <div className="trust-badges">
             <span>⭐ 20+ Years Expertise</span>
             <span>🏥 NABH Certified</span>
             <span>❤️ 10,000+ Success Stories</span>
           </div>
-        </div>
-        <div className="hero-image" data-aos="zoom-in">
-          <img src={heroImage} alt="Doctors" />
         </div>
       </section>
 
@@ -97,98 +92,122 @@ const Home = () => {
       </section>
 
       {/* ---------- SERVICES PREVIEW ---------- */}
-<div className="services-preview" data-aos="fade-up">
-  <h2>Our Key Services</h2>
-  <div className="services-grid">
-    <div className="service-card">
-      <img src={laserImage} alt="Laser Surgery" />
-      <h3>Laser Surgery</h3>
-      <p>Painless & advanced treatments for piles and fissures.</p>
-    </div>
-    <div className="service-card">
-      <img src={surgery} alt="Laparoscopic Care" />
-      <h3>Laparoscopic Care</h3>
-      <p>Minimal invasive procedures with quick recovery.</p>
-    </div>
-    <div className="service-card">
-      <img src={ward} alt="24/7 Emergency" />
-      <h3>24/7 Emergency</h3>
-      <p>Round-the-clock support for urgent medical needs.</p>
-    </div>
-    <div className="service-card">
-      <img src={hospitalImage} alt="Consultation" />
-      <h3>Expert Consultation</h3>
-      <p>Specialized doctors for accurate diagnosis & guidance.</p>
-    </div>
-    <div className="service-card">
-      <img src={Pharmacy} alt="Pharmacy" />
-      <h3>In-House Pharmacy</h3>
-      <p>Get all medicines & essentials within our hospital.</p>
-    </div>
-    <div className="service-card">
-      <img src={icu} alt="ICU Care" />
-      <h3>ICU & Recovery</h3>
-      <p>World-class critical care with experienced staff.</p>
-    </div>
-    <div className="service-card">
-  <img src={lab} alt="Diagnostics" />
-  <h3>Diagnostics & Lab</h3>
-  <p>On-site laboratory for quick and accurate results.</p>
-</div>
-<div className="service-card">
-  <img src={ambulance} alt="Ambulance Service" />
-  <h3>Ambulance Service</h3>
-  <p>24/7 ambulance support for emergency transport.</p>
-</div>
-  </div>
-</div>
+      <div className="services-preview" data-aos="fade-up">
+        <h2>Our Key Services</h2>
+        <div className="services-grid">
+          <div className="service-card">
+            <img src={laserImage} alt="Laser Surgery" />
+            <h3>Laser Surgery</h3>
+            <p>Painless & advanced treatments for piles and fissures.</p>
+          </div>
+          <div className="service-card">
+            <img src={surgery} alt="Laparoscopic Care" />
+            <h3>Laparoscopic Care</h3>
+            <p>Minimal invasive procedures with quick recovery.</p>
+          </div>
+          <div className="service-card">
+            <img src={ward} alt="24/7 Emergency" />
+            <h3>24/7 Emergency</h3>
+            <p>Round-the-clock support for urgent medical needs.</p>
+          </div>
+          <div className="service-card">
+            <img src={hospitalImage} alt="Consultation" />
+            <h3>Expert Consultation</h3>
+            <p>Specialized doctors for accurate diagnosis & guidance.</p>
+          </div>
+          <div className="service-card">
+            <img src={Pharmacy} alt="Pharmacy" />
+            <h3>In-House Pharmacy</h3>
+            <p>Get all medicines & essentials within our hospital.</p>
+          </div>
+          <div className="service-card">
+            <img src={icu} alt="ICU Care" />
+            <h3>ICU & Recovery</h3>
+            <p>World-class critical care with experienced staff.</p>
+          </div>
+          <div className="service-card">
+            <img src={lab} alt="Diagnostics" />
+            <h3>Diagnostics & Lab</h3>
+            <p>On-site laboratory for quick and accurate results.</p>
+          </div>
+          <div className="service-card">
+            <img src={ambulance} alt="Ambulance Service" />
+            <h3>Ambulance Service</h3>
+            <p>24/7 ambulance support for emergency transport.</p>
+          </div>
+        </div>
+      </div>
 
-{/* ---------- GALLERY PREVIEW ---------- */}
-<div className="gallery-preview" data-aos="fade-up">
-  <h2>Our Facilities</h2>
-  <div className="gallery-grid">
-    <img src={operatingTheatre} alt="Operating Theatre" />
-    <img src={waitingRoom} alt="Waiting Room" />
-    <img src={nurse} alt="Nurse" />
-    <img src={hospitalImage} alt="Reception" />
-    <img src={surgery} alt="ICU" />
-    <img src={doctorsTeamImage} alt="Pharmacy" />
-    <img src={ward} alt="Wards" />
-    <img src={laserImage} alt="Diagnostics" />
-    {/* New additions */}
-    <img src={ambulance} alt="Ambulance" />
-    <img src={cafeteria} alt="Cafeteria" />
-  </div>
-</div>
+      {/* ---------- GALLERY PREVIEW ---------- */}
+      <div className="gallery-preview" data-aos="fade-up">
+        <h2>Our Facilities</h2>
+        <div className="gallery-grid">
+          <img src={operatingTheatre} alt="Operating Theatre" />
+          <img src={waitingRoom} alt="Waiting Room" />
+          <img src={nurse} alt="Nurse" />
+          <img src={hospitalImage} alt="Reception" />
+          <img src={surgery} alt="ICU" />
+          <img src={doctorsTeamImage} alt="Pharmacy" />
+          <img src={ward} alt="Wards" />
+          <img src={laserImage} alt="Diagnostics" />
+          <img src={ambulance} alt="Ambulance" />
+          <img src={cafeteria} alt="Cafeteria" />
+        </div>
+      </div>
 
+      {/* ---------- ACHIEVEMENTS ---------- */}
+      <section className="achievements" data-aos="fade-up">
+        <h2>Our Achievements</h2>
+        <div className="achievements-grid">
+          <div className="achievement-card blue">
+            <i className="fas fa-user-md"></i>
+            <h3>10K+</h3>
+            <p>Patients Treated</p>
+          </div>
+          <div className="achievement-card green">
+            <i className="fas fa-calendar-check"></i>
+            <h3>20+</h3>
+            <p>Years of Experience</p>
+          </div>
+          <div className="achievement-card orange">
+            <i className="fas fa-users"></i>
+            <h3>50+</h3>
+            <p>Expert Staff</p>
+          </div>
+          <div className="achievement-card pink">
+            <i className="fas fa-heart"></i>
+            <h3>100%</h3>
+            <p>Patient Satisfaction</p>
+          </div>
+        </div>
+      </section>
 
-<section className="achievements" data-aos="fade-up">
-  <h2>Our Achievements</h2>
-  <div className="achievements-grid">
-    <div className="achievement-card blue">
-      <i className="fas fa-user-md"></i>
-      <h3>10K+</h3>
-      <p>Patients Treated</p>
-    </div>
-    <div className="achievement-card green">
-      <i className="fas fa-calendar-check"></i>
-      <h3>20+</h3>
-      <p>Years of Experience</p>
-    </div>
-    <div className="achievement-card orange">
-      <i className="fas fa-users"></i>
-      <h3>50+</h3>
-      <p>Expert Staff</p>
-    </div>
-    <div className="achievement-card pink">
-      <i className="fas fa-heart"></i>
-      <h3>100%</h3>
-      <p>Patient Satisfaction</p>
-    </div>
-  </div>
-</section>
-
-
+      {/* ---------- OUR VALUES & AWARDS ---------- */}
+      <section className="values-awards" data-aos="fade-up">
+        <h2>Our Values & Awards</h2>
+        <div className="values-awards-grid">
+          <div className="card">
+            <i className="fas fa-hand-holding-heart"></i>
+            <h3>Compassion</h3>
+            <p>We treat every patient with empathy, respect, and care.</p>
+          </div>
+          <div className="card">
+            <i className="fas fa-certificate"></i>
+            <h3>Excellence</h3>
+            <p>Delivering world-class healthcare with latest technology.</p>
+          </div>
+          <div className="card">
+            <i className="fas fa-users"></i>
+            <h3>Integrity</h3>
+            <p>Transparent and ethical medical practices, always.</p>
+          </div>
+          <div className="card award">
+            <i className="fas fa-trophy"></i>
+            <h3>Awards & Recognition</h3>
+            <p>NABH certified and recognized for outstanding patient care.</p>
+          </div>
+        </div>
+      </section>
 
       {/* ---------- TESTIMONIALS (SLIDER) ---------- */}
       <section className="testimonials" data-aos="fade-up">

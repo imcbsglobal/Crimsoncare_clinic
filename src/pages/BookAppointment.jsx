@@ -21,7 +21,7 @@ const BookAppointment = () => {
 
     // ✅ WhatsApp number in full international format (without +)
     const whatsappNumber = "917510700085"; 
-
+ 
     // ✅ Construct WhatsApp message
     const text = `📅 New Appointment Request
 -------------------------

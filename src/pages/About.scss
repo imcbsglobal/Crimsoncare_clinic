@@ -1,184 +1,237 @@
+/* ----------  GLOBAL PAGE WRAPPER  ---------- */
 .about {
-  padding: 12rem 2rem;
-  /* ✨ Full-page background color/gradient */
-  background: linear-gradient(135deg, #e0f7fa, #e3f2fd);
-  min-height: 100vh; /* ensures full page coverage */
+  padding: 0 0 12rem;           // top padding removed – banner handles it
+  background: #fafafa;
+  min-height: 100vh;
   color: #333;
 
-  h1, h2, h3 {
-    color: #202020;
-  }
-
+  h1, h2, h3 { color: #202020; }
   p {
     font-size: 1.1rem;
     line-height: 1.6;
     color: #444;
   }
+}
 
-  /* ---------- Hero Section ---------- */
-  .about-hero {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 4rem;
+/* ----------  FULL-VIEWPORT BANNER WITH IMAGE  ---------- */
+.about-hero-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 98vh;
+  padding: 0 2rem;
+  background: center/cover no-repeat; // image injected inline via React
+  text-align: center;
+  color: #fff;
 
-    .text {
-      flex: 1;
-    }
-
-    .image {
-      flex: 1;
-      img {
-        width: 100%;
-        border-radius: 1rem;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-      }
-    }
+  /* dark overlay so white text pops */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
   }
 
-  /* ---------- Info ---------- */
-  .about-info {
+  .hero-content {
+    position: relative;
+    z-index: 2;
     max-width: 900px;
-    margin: 0 auto 4rem;
-    text-align: center;
 
-    h2 {
+    .pre-title {
+      font-size: 1rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #f8d7da;
       margin-bottom: 1rem;
-      font-size: 2rem;
     }
 
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 1.5rem;
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      margin-bottom: 1.5rem;
+    }
 
-      li {
-        width: 45%;
-        margin: 0.5rem 1rem;
-        font-weight: 500;
-      }
+    p {
+      font-size: 1.15rem;
+      line-height: 1.7;
     }
   }
+}
 
-  /* ---------- Cards ---------- */
-  .about-cards {
+/* ----------  INFO SECTION  ---------- */
+.about-info {
+  max-width: 900px;
+  margin: 6rem auto 4rem;
+  text-align: center;
+
+  h2 { margin-bottom: 1rem; font-size: 2rem; }
+
+  .divider {
+    width: 60px;
+    height: 4px;
+    background: #c0392b;
+    margin: 0 auto 2rem;
+  }
+
+  .features {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
     justify-content: center;
-    margin-bottom: 4rem;
+    margin-top: 1.5rem;
+    list-style: none;
+    padding: 0;
 
-    .card {
-      background: #fff;
-      border: 1px solid #e0e0e0;
-      padding: 2rem;
-      border-radius: 12px;
-      flex: 1 1 300px;
-      max-width: 350px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-      transition: 0.3s ease;
+    li {
+      width: 45%;
+      margin: 0.5rem 1rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+}
 
-      h3 {
-        font-size: 1.3rem;
-        margin-bottom: 1rem;
-      }
+/* ----------  CARDS  ---------- */
+.about-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 4rem;
 
-      ul {
-        padding-left: 1.2rem;
-        li {
-          margin-bottom: 0.5rem;
-        }
-      }
+  .card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 2rem;
+    border-radius: 12px;
+    flex: 1 1 300px;
+    max-width: 350px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    transition: 0.3s ease;
 
-      &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-      }
+    h3 { font-size: 1.3rem; margin-bottom: 1rem; }
+
+    ul {
+      padding-left: 1.2rem;
+      li { margin-bottom: 0.5rem; }
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     }
   }
 
-  /* ---------- Stats ---------- */
-  .about-stats {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin: 4rem 0;
+  .card-icon  { font-size: 2rem; margin-bottom: 0.75rem; }
+  .card-divider {
+    width: 40px;
+    height: 3px;
+    background: #c0392b;
+    margin: 0.5rem 0 1rem;
+  }
+}
 
-    .stat {
-      background: #fff;
-      padding: 2rem 3rem;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+/* ----------  STATS  ---------- */
+.about-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 4rem 0;
 
-      h2 {
-        font-size: 2.5rem;
-        color: #c0392b;
-      }
+  .stat {
+    background: #fff;
+    padding: 2rem 3rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 
-      p {
-        font-size: 1.1rem;
-        margin-top: 0.5rem;
-        font-weight: 500;
-      }
-    }
+    h2 { font-size: 2.5rem; color: #c0392b; }
+
+    p { font-size: 1.1rem; margin-top: 0.5rem; font-weight: 500; }
   }
 
-  /* ---------- CTA ---------- */
-  .about-cta {
-    display: flex;
-    justify-content: center;
+  .stat-divider {
+    width: 30px;
+    height: 3px;
+    background: #c0392b;
+    margin: 0.5rem auto;
+  }
+}
+
+/* ----------  CTA  ---------- */
+.about-cta {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .btn-primary {
+    background: #c0392b;
+    color: #fff;
+    &:hover { background: #a93226; }
+  }
+
+  .btn-secondary {
+    background: #eee;
+    color: #333;
+    &:hover { background: #ddd; }
+  }
+}
+
+/* ----------  RESPONSIVE  ---------- */
+@media (max-width: 768px) {
+  /* --- banner --- */
+  .about-hero-banner {
+    padding: 10rem 1rem 4rem;   /* ← big top pad, small bottom pad */
+    min-height: auto;           /* let content decide height */
+  }
+
+  /* --- info --- */
+  .about-info {
+    margin: 3rem auto 2rem;
+    padding: 0 1rem;
+  }
+
+  /* --- cards --- */
+  .about-cards {
+    flex-direction: column;
+    align-items: center;
     gap: 1.5rem;
-    margin-top: 3rem;
-
-    .btn-primary,
-    .btn-secondary {
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: 0.3s ease;
-    }
-
-    .btn-primary {
-      background-color: #c0392b;
-      color: #fff;
-
-      &:hover {
-        background-color: #a93226;
-      }
-    }
-
-    .btn-secondary {
-      background-color: #eee;
-      color: #333;
-
-      &:hover {
-        background-color: #ddd;
-      }
-    }
+    padding: 0 1rem;
   }
 
-  /* ---------- Responsive ---------- */
-  @media (max-width: 768px) {
-    .about-hero,
-    .about-cards,
-    .about-stats {
-      flex-direction: column;
-      align-items: center;
-    }
+  /* --- stats --- */
+  .about-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+    padding: 0 1rem;
+  }
 
-    .about-info .features li {
-      width: 100%;
-      text-align: left;
-    }
+  /* --- features list --- */
+  .about-info .features li {
+    width: 100%;
+    text-align: left;
+  }
 
-    .about-cta {
-      flex-direction: column;
-      align-items: center;
-    }
+  /* --- cta buttons --- */
+  .about-cta {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1rem 2rem;
   }
 }
