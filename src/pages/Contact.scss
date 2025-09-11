@@ -1,13 +1,54 @@
 /* ---------- FULL PAGE BACKGROUND ---------- */
 .contact-page {
-  background: #ffffff; 
+  background: #fafafa;
   min-height: 100vh;
   width: 100%;
   font-family: "Inter", sans-serif;
+  overflow-x: hidden;   /* ✅ Prevent horizontal scroll */
 }
 
+/*  ➜  FULL-FIT BANNER  */
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 99vh;          /* ✅ Keep your 98vh */
+  overflow: hidden;      /* ✅ Keep children inside */
+  
+  .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    max-width: 100%;     /* ✅ Prevents overflow */
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 1rem;     /* ✅ Safe padding to avoid overflow */
+
+    h1 {
+      font-size: 3.2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+
+/* ---------- EXISTING CONTACT SECTION ---------- */
 .contact {
-  padding: 11rem 2rem 4rem;
+  padding: 6rem 2rem 4rem;
   text-align: center;
 
   .contact-header {
@@ -26,7 +67,6 @@
     }
   }
 
-  /* GRID LAYOUT */
   .contact-container {
     display: flex;
     flex-wrap: wrap;
@@ -36,7 +76,6 @@
     margin-bottom: 4rem;
   }
 
-  /* LEFT SIDE INFO CARDS */
   .contact-info {
     flex: 1;
     min-width: 280px;
@@ -73,7 +112,6 @@
     }
   }
 
-  /* RIGHT SIDE FORM */
   .contact-form {
     flex: 1.2;
     min-width: 300px;
@@ -121,7 +159,6 @@
     }
   }
 
-  /* MAP */
   .map {
     margin-bottom: 3rem;
 
@@ -131,7 +168,6 @@
     }
   }
 
-  /* SOCIAL MEDIA */
   .social-media {
     margin-bottom: 3rem;
 
@@ -164,7 +200,6 @@
     }
   }
 
-  /* CALL TO ACTION */
   .contact-cta {
     background: linear-gradient(135deg, #ec407a, #d81b60);
     padding: 3rem;
@@ -200,48 +235,5 @@
         transform: scale(1.05);
       }
     }
-  }
-}
-
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 768px) {
-  .contact {
-    padding: 13rem 1.5rem 5rem;  /* more top-bottom, tighter sides */
-  }
-
-  .contact-container {
-    flex-direction: column;   /* stack info + form vertically */
-    align-items: center;
-  }
-
-  .contact-form {
-    padding: 2rem;  /* reduce form padding */
-  }
-
-  .contact-cta {
-    padding: 2rem;  /* reduce CTA padding */
-  }
-
-  .contact-header h2 {
-    font-size: 2rem;
-  }
-
-  .contact-header p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .contact {
-    padding: 14rem 1rem 5rem; /* extra padding for very small screens */
-  }
-
-  .contact-form,
-  .contact-info {
-    width: 100%; /* take full width */
-  }
-
-  .contact-cta {
-    padding: 1.5rem;
   }
 }

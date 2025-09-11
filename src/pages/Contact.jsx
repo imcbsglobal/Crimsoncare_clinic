@@ -3,6 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "./Contact.scss";
 import Footer from "../components/Footer";
+import contactBanner from "../assets/contact-banner.jpg";   //  ➜  NEW
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -16,33 +17,34 @@ const Contact = () => {
     AOS.init({ duration: 1200 });
   }, []);
 
-  // Handle input changes
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle WhatsApp send
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    const whatsappNumber = "917510700085"; // ✅ International format (no +)
-
+    const whatsappNumber = "917510700085";
     const text = `📩 New Contact Request
 -------------------------
 👤 Name: ${formData.name}
 📧 Email: ${formData.email}
 📞 Phone: ${formData.phone || "N/A"}
 💬 Message: ${formData.message}`;
-
-    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-      text
-    )}`;
-
-    window.open(whatsappLink, "_blank"); // ✅ Open WhatsApp
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+    window.open(whatsappLink, "_blank");
   };
 
   return (
     <div className="contact-page">
+      {/*  ➜  FULL-FIT BANNER  */}
+      <section className="hero-banner">
+        <img src={contactBanner} alt="Contact Us" className="hero-img" />
+        <div className="hero-overlay">
+          <h1>Contact Us</h1>
+          <p>We'd love to hear from you</p>
+        </div>
+      </section>
+
       <section id="contact-us" className="contact">
         <div className="contact-header" data-aos="fade-down">
           <h2>Contact Us</h2>
@@ -53,9 +55,7 @@ const Contact = () => {
           </p>
         </div>
 
-        {/* Contact Section Grid */}
         <div className="contact-container">
-          {/* Left: Contact Info */}
           <div className="contact-info" data-aos="fade-right">
             <div className="info-card">
               <i className="fas fa-phone"></i>
@@ -74,7 +74,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Right: Contact Form */}
           <div className="contact-form" data-aos="fade-left">
             <form onSubmit={handleSubmit}>
               <input
@@ -115,22 +114,19 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Map */}
         <div className="map" data-aos="zoom-in">
-  <iframe
-    title="Hospital Location"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3912.9376119778194!2d75.81284577481247!3d11.265996488914146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65b0011d46f79%3A0x1869b0abc95b8c0a!2sCRIMSON%20HEALTH%20CARE%20SOLUTUONS%2C%203RD%20FLOOR%2C%20CK%20TOWER!5e0!3m2!1sen!2sin!4v1756448266296!5m2!1sen!2sin"
-    width="100%"
-    height="350"
-    style={{ border: 0 }}
-    allowFullScreen=""
-    loading="lazy"
-    referrerPolicy="no-referrer-when-downgrade"
-  ></iframe>
-</div>
+          <iframe
+            title="Hospital Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3912.9376119778194!2d75.81284577481247!3d11.265996488914146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65b0011d46f79%3A0x1869b0abc95b8c0a!2sCRIMSON%20HEALTH%20CARE%20SOLUTUONS%2C%203RD%20FLOOR%2C%20CK%20TOWER!5e0!3m2!1sen!2sin!4v1756448266296!5m2!1sen!2sin"
+            width="100%"
+            height="350"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
 
-
-        {/* Social Media */}
         <div className="social-media" data-aos="fade-up">
           <h3>Follow Us</h3>
           <div className="icons">
@@ -141,7 +137,6 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* CTA */}
         <div className="contact-cta" data-aos="zoom-in">
           <h3>Need Immediate Help?</h3>
           <p>Call us directly and our support team will assist you right away.</p>
@@ -149,7 +144,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Footer */}
       <Footer />
     </div>
   );

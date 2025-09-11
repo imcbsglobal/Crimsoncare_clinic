@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import "./Gallery.scss";
-import Footer from "../components/Footer";   // ⬅️ Import Footer
+import Footer from "../components/Footer";
 
-import operatingTheatre from "../assets/operating-theatre.jpeg"; 
-import laserEquipment from "../assets/laser-equipment.jpeg"; 
-import patientRecovery from "../assets/patient-recovery.jpg"; 
-import ward from "../assets/ward.jpg"; 
-import consultation from "../assets/consultation.jpg"; 
-import waitingRoom from "../assets/waiting-room.jpg"; 
-import canteen from "../assets/canteen.jpeg"; 
-import nurse from "../assets/nurse.jpg"; 
-import ambulance from "../assets/ambulance.jpg";      // ✅ New
-import cafeteria from "../assets/cafeteria.jpg";      // ✅ New
+import operatingTheatre from "../assets/operating-theatre.jpeg";
+import laserEquipment from "../assets/laser-equipment.jpeg";
+import patientRecovery from "../assets/patient-recovery.jpg";
+import ward from "../assets/ward.jpg";
+import consultation from "../assets/consultation.jpg";
+import waitingRoom from "../assets/waiting-room.jpg";
+import canteen from "../assets/canteen.jpeg";
+import nurse from "../assets/nurse.jpg";
+import ambulance from "../assets/ambulance.jpg";
+import cafeteria from "../assets/cafeteria.jpg";
+import galleryBanner from "../assets/gallery-banner.jpg";   // <-- NEW
 
 const Gallery = () => {
   const images = [
@@ -23,14 +24,22 @@ const Gallery = () => {
     { src: waitingRoom, caption: "Spacious Waiting Area" },
     { src: canteen, caption: "Hygienic Canteen Facility" },
     { src: nurse, caption: "Friendly Nursing Staff" },
-    { src: ambulance, caption: "Emergency Ambulance Service" },   // ✅ Added
-    { src: cafeteria, caption: "Comfortable Cafeteria" }          // ✅ Added
+    { src: ambulance, caption: "Emergency Ambulance Service" },
+    { src: cafeteria, caption: "Comfortable Cafeteria" }
   ];
 
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <div className="gallery-page">   {/* ✅ Wrapper for full background */}
+    <div className="gallery-page">
+      {/* --- FULL-FIT BANNER --- */}
+      <section className="hero-banner">
+        <img src={galleryBanner} alt="PilesCare Hospital" className="hero-img" />
+        <div className="hero-overlay">
+          <h1>Caring Spaces at PilesCare Hospital</h1>
+          <p>State-of-the-art facilities, compassionate care.</p>
+        </div>
+      </section>
 
       <section id="gallery" className="gallery">
         <div className="gallery-header" data-aos="fade-down">
@@ -57,7 +66,6 @@ const Gallery = () => {
           ))}
         </div>
 
-        {/* Lightbox Modal */}
         {selectedImage && (
           <div className="lightbox" onClick={() => setSelectedImage(null)}>
             <div className="lightbox-content" data-aos="zoom-in">
@@ -77,7 +85,6 @@ const Gallery = () => {
         </div>
       </section>
 
-      {/* ---------- FOOTER ---------- */}
       <Footer />
     </div>
   );
