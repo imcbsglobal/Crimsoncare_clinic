@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import './Navbar.scss';
+import metroLogo from '../assets/metro_logo.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -61,8 +62,10 @@ const Navbar = () => {
           <div className="navbar-content">
             {/* Logo */}
             <div className="logo-container">
-              <img src="/logo.svg" alt="Crimson Clinics" className="logo-img" />
-            </div>
+              <Link to="/">
+                <img src={metroLogo} alt="Metro Logo" className="logo-img" / >
+              </Link>
+            </div>
 
             {/* Desktop menu */}
             <ul className="nav-menu">

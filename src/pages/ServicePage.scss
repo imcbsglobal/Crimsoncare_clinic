@@ -1,6 +1,6 @@
 /* ---------- FULL PAGE BACKGROUND ---------- */
 .service-page {
-  background: #ffffff;  /* ✅ Gradient applied */
+  background: #ffffff;
   min-height: 100vh;
   width: 100%;
 
@@ -49,7 +49,7 @@
     gap: 2rem;
     padding: 4rem 1rem;
     align-items: flex-start;
-    background: transparent;   /* ✅ so gradient shows */
+    background: transparent;
 
     .text-box {
       flex: 1.2;
@@ -74,7 +74,7 @@
         margin-top: 2rem;
         padding: 1.5rem;
         background: #f9fafb;
-        border-left: 5px solid #3b82f6;
+        border-left: 5px solid #ef4444;   /* 🔴 red border */
         border-radius: 0.75rem;
         transition: all 0.3s ease;
 
@@ -88,7 +88,7 @@
 
         .btn-primary {
           margin-top: 1rem;
-          background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+          background: linear-gradient(90deg, #ef4444, #b91c1c); /* 🔴 red gradient */
           color: white;
           padding: 0.75rem 1.5rem;
           border: none;
@@ -102,7 +102,7 @@
           display: inline-block;  
 
           &:hover {
-            background: linear-gradient(90deg, #2563eb, #7c3aed);
+            background: linear-gradient(90deg, #dc2626, #991b1b); /* 🔴 darker red on hover */
           }
         }
       }
@@ -156,7 +156,7 @@
 
         i {
           font-size: 2rem;
-          color: #3b82f6;
+          color: #ef4444; /* 🔴 red icons */
           margin-bottom: 0.75rem;
         }
 
@@ -207,11 +207,11 @@
 
   @media (max-width: 480px) {
     .service-banner .overlay h1 {
-      font-size: 1.6rem;
+      font-size: 1.8rem;  /* slightly larger for readability */
     }
 
     .service-banner .overlay p {
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
 
     .service-content {

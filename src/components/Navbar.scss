@@ -117,7 +117,7 @@ body {
     }
 
     .logo-container {
-      .logo-icon {
+      .logo-img {
         width: 2.5rem;
         height: 2.5rem;
       }
@@ -234,6 +234,12 @@ body {
         background-position: center;
       }
 
+      a {
+        text-decoration: none !important;
+        color: $white !important;
+        font-weight: 500;
+      }
+
       span {
         font-weight: 400;
         white-space: nowrap;
@@ -338,8 +344,27 @@ body {
     cursor: pointer;
     transition: $transition-fast;
 
+    a {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
     &:hover {
       transform: scale(1.02);
+    }
+
+    .logo-img {
+      width: 3rem;
+      height: 3rem;
+      object-fit: contain;
+      border-radius: $border-radius-md;
+      transition: $transition-normal;
+
+      @media (max-width: 480px) {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
     }
 
     .logo-icon {
@@ -493,6 +518,60 @@ body {
     }
   }
 
+  // Services dropdown styles
+  .nav-item.services-dropdown-trigger {
+    position: relative;
+    
+    .nav-link.with-dropdown {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      
+      i {
+        font-size: 0.75rem;
+        transition: transform 0.3s ease;
+      }
+    }
+    
+    &:hover {
+      .nav-link.with-dropdown i {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .services-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: $white;
+    box-shadow: $shadow-xl;
+    border-radius: $border-radius-md;
+    padding: 0.5rem 0;
+    min-width: 250px;
+    z-index: 1000;
+    animation: fadeInUp 0.3s ease;
+    
+    .dropdown-item {
+      display: block;
+      padding: 0.75rem 1.5rem;
+      color: $gray-700;
+      text-decoration: none;
+      transition: $transition-fast;
+      font-size: 0.9rem;
+      
+      &:hover {
+        background: $gray-100;
+        color: $primary-blue;
+      }
+
+      &.active {
+        background: $primary-blue;
+        color: $white;
+      }
+    }
+  }
+
   // Action Buttons
   .navbar-actions {
     display: flex;
@@ -549,7 +628,7 @@ body {
 
     .appointment-btn {
       background: $gradient-secondary;
-      color: $white;
+      color: $white !important;
       border: none;
       padding: 0.75rem 1.5rem;
       border-radius: $border-radius-lg;
@@ -561,6 +640,8 @@ body {
       position: relative;
       overflow: hidden;
       white-space: nowrap;
+      text-decoration: none !important;
+      display: inline-block;
 
       @media (max-width: 480px) {
         padding: 0.625rem 1rem;
@@ -710,8 +791,63 @@ body {
           }
         }
 
+        &.active {
+          color: $primary-blue;
+          background: rgba(59, 130, 246, 0.05);
+
+          &::before {
+            width: 4px;
+          }
+        }
+
         &:last-child {
           border-bottom: none;
+        }
+      }
+    }
+  }
+
+  // Mobile dropdown styles
+  .mobile-dropdown {
+    width: 100%;
+    
+    .mobile-dropdown-trigger {
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: $gray-700;
+      font-weight: 500;
+      cursor: pointer;
+      border-bottom: 1px solid $gray-100;
+    }
+    
+    .mobile-dropdown-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      
+      &.active {
+        max-height: 300px;
+      }
+      
+      a {
+        display: block;
+        padding: 0.75rem 1.5rem;
+        color: $gray-600;
+        text-decoration: none;
+        font-size: 0.9rem;
+        border-bottom: 1px solid $gray-100;
+        background: $gray-50;
+        
+        &:hover {
+          background: $gray-100;
+          color: $primary-blue;
+        }
+
+        &.active {
+          background: $primary-blue;
+          color: $white;
         }
       }
     }
@@ -725,7 +861,7 @@ body {
     .mobile-appointment-btn {
       width: 100%;
       background: $gradient-secondary;
-      color: $white;
+      color: $white !important;
       border: none;
       padding: 1rem;
       border-radius: $border-radius-lg;
@@ -736,6 +872,8 @@ body {
       box-shadow: $shadow-sm;
       position: relative;
       overflow: hidden;
+      text-decoration: none !important;
+      display: inline-block;
 
       &::before {
         content: '';
@@ -843,7 +981,6 @@ body {
   outline: none !important;
   box-shadow: none !important;
 }
-
 
 // Loading Animation
 .loading {
@@ -1057,10 +1194,47 @@ body {
       background: $gray-100;
     }
   }
+
+  // Dark mode support for dropdowns
+  .services-dropdown {
+    background: $gray-900;
+    border: 1px solid $gray-700;
+    
+    .dropdown-item {
+      color: $gray-100;
+      
+      &:hover {
+        background: $gray-800;
+        color: $primary-blue;
+      }
+    }
+  }
+  
+  .mobile-dropdown {
+    .mobile-dropdown-trigger {
+      color: $gray-100;
+      border-bottom-color: $gray-700;
+    }
+    
+    .mobile-dropdown-content a {
+      color: $gray-300;
+      border-bottom-color: $gray-700;
+      background: $gray-800;
+      
+      &:hover {
+        background: $gray-700;
+        color: $primary-blue;
+      }
+    }
+  }
 }
 
 // Responsive Typography
 @media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+
   .nav-menu .nav-item .nav-link {
     font-size: 0.875rem;
   }
@@ -1068,6 +1242,158 @@ body {
   .appointment-btn {
     font-size: 0.8125rem;
     padding: 0.6875rem 1.25rem;
+  }
+
+  /* TOPBAR */
+  .topbar {
+    padding: 0.75rem 0;
+
+    .topbar-content {
+      flex-direction: column;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+    }
+
+    .contact-info {
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+
+      .contact-item {
+        font-size: 0.75rem;
+        gap: 0.375rem;
+
+        &::before {
+          width: 0.875rem;
+          height: 0.875rem;
+          background-size: 0.625rem;
+        }
+
+        span {
+          font-size: 0.6875rem;
+        }
+      }
+    }
+
+    .social-links {
+      gap: 0.5rem;
+
+      .social-link {
+        width: 1.875rem;
+        height: 1.875rem;
+
+        svg {
+          width: 0.875rem;
+          height: 0.875rem;
+        }
+      }
+    }
+  }
+
+  /* MAIN NAVBAR */
+  .main-navbar {
+    padding: 0.75rem 0;
+
+    .navbar-content {
+      padding: 0 0.75rem;
+    }
+
+    /* Logo */
+    .logo-container {
+      gap: 0.5rem;
+
+      .logo-img {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+
+      .logo-text {
+        .clinic-name {
+          font-size: 1rem;
+        }
+        .clinic-tagline {
+          font-size: 0.5625rem;
+        }
+      }
+    }
+
+    /* Hide desktop menu & search */
+    .nav-menu,
+    .search-btn {
+      display: none !important;
+    }
+
+    /* Hamburger */
+    .mobile-toggle {
+      width: 2.5rem;
+      height: 2.5rem;
+      gap: 0.3125rem;
+
+      span {
+        width: 1.375rem;
+      }
+    }
+  }
+
+  /* MOBILE MENU PANEL */
+  .mobile-menu {
+    border-radius: 0 0 0.75rem 0.75rem;
+
+    .mobile-nav-menu {
+      padding: 1rem 0.75rem;
+
+      /* Single-level links */
+      > li a {
+        font-size: 0.9375rem;
+        padding: 0.875rem 1rem;
+      }
+
+      /* Dropdown toggles */
+      .mobile-dropdown-trigger {
+        font-size: 0.9375rem;
+        padding: 0.875rem 1rem;
+        border-bottom: 1px solid $gray-200;
+      }
+
+      .mobile-dropdown-content {
+        background: $gray-50;
+
+        a {
+          font-size: 0.875rem;
+          padding: 0.75rem 1.5rem;
+          padding-left: 2.25rem; // indent sub-links
+          border-bottom: 1px solid rgba($gray-300, 0.5);
+
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+
+    .mobile-actions {
+      padding: 1rem 0.75rem;
+
+      .mobile-appointment-btn {
+        font-size: 0.9375rem;
+        padding: 0.875rem;
+      }
+    }
+  }
+
+  /* SCROLLED STATE */
+  .navbar-container.scrolled {
+    .logo-img {
+      width: 2.25rem;
+      height: 2.25rem;
+    }
+  }
+
+  /* DARK MODE TWEAKS */
+  @media (prefers-color-scheme: dark) {
+    .mobile-menu .mobile-dropdown-content {
+      background: $gray-800;
+    }
   }
 }
 
@@ -1326,14 +1652,6 @@ body {
     background: rgba(255, 255, 255, 0.95);
   }
 }
-// ✅ Ensure Link keeps button style
-.appointment-btn,
-.mobile-appointment-btn {
-  text-decoration: none !important; // no underline
-  color: $white !important;         // force white text
-  display: inline-block;            // keeps button box layout
-}
-
 
 // Improved contrast ratios for WCAG compliance
 @media (prefers-contrast: more) {
@@ -1360,28 +1678,19 @@ body {
     }
   }
 }
-// Topbar Book Appointment link fix
-.topbar .contact-item a {
-  text-decoration: none !important;  // remove underline
-  color: $white !important;          // make it white like other items
-  font-weight: 500;
-}
 
-
-// RTL support – expanded
+// RTL support
 [dir="rtl"] {
   .navbar-content {
     direction: rtl;
   }
 
-  /* Reverse order of flex children where needed */
   .contact-info,
   .navbar-actions,
   .social-links {
     flex-direction: row-reverse;
   }
 
-  /* Logo adjustments */
   .logo-container {
     flex-direction: row-reverse;
     .logo-icon + .logo-text {
@@ -1397,7 +1706,6 @@ body {
     }
   }
 
-  /* Mobile menu */
   .mobile-nav-menu a {
     text-align: right;
     &:hover {
@@ -1410,302 +1718,15 @@ body {
     }
   }
 
-  /* Mobile toggle Icon lines */
   .mobile-toggle {
     span {
       transform-origin: right center;
     }
-    &.active span:first-child  { transform: rotate(45deg)  translate(0.375rem, 0.375rem); }
-    &.active span:last-child   { transform: rotate(-45deg) translate(0.375rem, -0.375rem); }
-  }
-}
-// Services dropdown styles
-.nav-item.services-dropdown-trigger {
-  position: relative;
-  
-  .nav-link.with-dropdown {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    
-    i {
-      font-size: 0.75rem;
-      transition: transform 0.3s ease;
+    &.active span:first-child  { 
+      transform: rotate(45deg) translate(0.375rem, 0.375rem); 
     }
-  }
-  
-  &:hover {
-    .nav-link.with-dropdown i {
-      transform: rotate(180deg);
+    &.active span:last-child   { 
+      transform: rotate(-45deg) translate(0.375rem, -0.375rem); 
     }
   }
 }
-
-.services-dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: $white;
-  box-shadow: $shadow-xl;
-  border-radius: $border-radius-md;
-  padding: 0.5rem 0;
-  min-width: 250px;
-  z-index: 1000;
-  animation: fadeInUp 0.3s ease;
-  
-  .dropdown-item {
-    display: block;
-    padding: 0.75rem 1.5rem;
-    color: $gray-700;
-    text-decoration: none;
-    transition: $transition-fast;
-    font-size: 0.9rem;
-    
-    &:hover {
-      background: $gray-100;
-      color: $primary-blue;
-    }
-  }
-}
-
-// Mobile dropdown styles
-.mobile-dropdown {
-  width: 100%;
-  
-  .mobile-dropdown-trigger {
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: $gray-700;
-    font-weight: 500;
-    cursor: pointer;
-    border-bottom: 1px solid $gray-100;
-  }
-  
-  .mobile-dropdown-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    
-    &.active {
-      max-height: 300px;
-    }
-    
-    a {
-      display: block;
-      padding: 0.75rem 1.5rem;
-      color: $gray-600;
-      text-decoration: none;
-      font-size: 0.9rem;
-      border-bottom: 1px solid $gray-100;
-      background: $gray-50;
-      
-      &:hover {
-        background: $gray-100;
-        color: $primary-blue;
-      }
-    }
-  }
-}
-
-// Dark mode support for dropdowns
-@media (prefers-color-scheme: dark) {
-  .services-dropdown {
-    background: $gray-900;
-    border: 1px solid $gray-700;
-    
-    .dropdown-item {
-      color: $gray-100;
-      
-      &:hover {
-        background: $gray-800;
-        color: $primary-blue;
-      }
-    }
-  }
-  
-  .mobile-dropdown {
-    .mobile-dropdown-trigger {
-      color: $gray-100;
-      border-bottom-color: $gray-700;
-    }
-    
-    .mobile-dropdown-content a {
-      color: $gray-300;
-      border-bottom-color: $gray-700;
-      background: $gray-800;
-      
-      &:hover {
-        background: $gray-700;
-        color: $primary-blue;
-      }
-    }
-  }
-}
-/* ==========================================
-   MOBILE NAVBAR – 100 % RESPONSIVE ≤ 768 px
-   ========================================== */
-
-@media (max-width: 768px) {
-  /* --- GLOBAL RESETS --- */
-  html {
-    font-size: 15px; // slightly smaller root font
-  }
-
-  /* --- TOPBAR --- */
-  .topbar {
-    padding: 0.75rem 0;
-
-    .topbar-content {
-      flex-direction: column;
-      gap: 0.75rem;
-      padding: 0.75rem 1rem;
-    }
-
-    .contact-info {
-      flex-direction: column;
-      gap: 0.5rem;
-      text-align: center;
-
-      .contact-item {
-        font-size: 0.75rem;
-        gap: 0.375rem;
-
-        &::before {
-          width: 0.875rem;
-          height: 0.875rem;
-          background-size: 0.625rem;
-        }
-
-        span {
-          font-size: 0.6875rem;
-        }
-      }
-    }
-
-    .social-links {
-      gap: 0.5rem;
-
-      .social-link {
-        width: 1.875rem;
-        height: 1.875rem;
-
-        svg {
-          width: 0.875rem;
-          height: 0.875rem;
-        }
-      }
-    }
-  }
-
-  /* --- MAIN NAVBAR --- */
-  .main-navbar {
-    padding: 0.75rem 0;
-
-    .navbar-content {
-      padding: 0 0.75rem;
-    }
-
-    /* Logo */
-    .logo-container {
-      gap: 0.5rem;
-
-      .logo-img {
-        width: 2.5rem;
-        height: 2.5rem;
-      }
-
-      .logo-text {
-        .clinic-name {
-          font-size: 1rem;
-        }
-        .clinic-tagline {
-          font-size: 0.5625rem;
-        }
-      }
-    }
-
-    /* Hide desktop menu & search */
-    .nav-menu,
-    .search-btn {
-      display: none !important;
-    }
-
-    /* Hamburger (already visible via existing media query) */
-    .mobile-toggle {
-      width: 2.5rem;
-      height: 2.5rem;
-      gap: 0.3125rem;
-
-      span {
-        width: 1.375rem;
-      }
-    }
-  }
-
-  /* --- MOBILE MENU PANEL --- */
-  .mobile-menu {
-    border-radius: 0 0 0.75rem 0.75rem;
-
-    .mobile-nav-menu {
-      padding: 1rem 0.75rem;
-
-      /* Single-level links */
-      > li a {
-        font-size: 0.9375rem;
-        padding: 0.875rem 1rem;
-      }
-
-      /* Dropdown toggles */
-      .mobile-dropdown-trigger {
-        font-size: 0.9375rem;
-        padding: 0.875rem 1rem;
-        border-bottom: 1px solid $gray-200;
-      }
-
-      .mobile-dropdown-content {
-        background: $gray-50;
-
-        a {
-          font-size: 0.875rem;
-          padding: 0.75rem 1.5rem;
-          padding-left: 2.25rem; // indent sub-links
-          border-bottom: 1px solid rgba($gray-300, 0.5);
-
-          &:last-child {
-            border-bottom: none;
-          }
-        }
-      }
-    }
-
-    .mobile-actions {
-      padding: 1rem 0.75rem;
-
-      .mobile-appointment-btn {
-        font-size: 0.9375rem;
-        padding: 0.875rem;
-      }
-    }
-  }
-
-  /* --- SCROLLED STATE --- */
-  .navbar-container.scrolled {
-    .logo-img {
-      width: 2.25rem;
-      height: 2.25rem;
-    }
-  }
-
-  /* --- DARK MODE TWEAKS --- */
-  @media (prefers-color-scheme: dark) {
-    .mobile-menu .mobile-dropdown-content {
-      background: $gray-800;
-    }
-  }
-}
-
-
-
-// End of SCSS file
