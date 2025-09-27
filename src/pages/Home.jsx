@@ -42,27 +42,30 @@ const Home = () => {
     <div className="home-page">
       {/* ---------- HERO ---------- */}
       <section className="hero">
-        <div className="hero-overlay"></div>
-        <div className="hero-content" data-aos="fade-up">
-          <h1>
-            Advanced <span>Piles & Fissure</span> Treatments
-          </h1> 
-          <p>
-            Premium healthcare with the latest technology, compassionate doctors,
-            and painless procedures. Trusted by 10,000+ patients.
-          </p>
-          <div className="hero-buttons">
-            <Link to="/book-appointment">
-              <button className="btn-primary">Book Appointment</button>
-            </Link>
-          </div>
-          <div className="trust-badges">
-            <span>⭐ 20+ Years Expertise</span>
-            <span>🏥 NABH Certified</span>
-            <span>❤️ 10,000+ Success Stories</span>
-          </div>
-        </div>
-      </section>
+  <div className="hero-overlay"></div>
+  <div className="hero-content" data-aos="fade-up">
+    {/* Main Heading */}
+    <h1 className="hero-title">
+      Advanced <span className="highlight">Proctology & Surgical Care</span>
+    </h1>
+
+    {/* Description */}
+    <p className="hero-description">
+      Specialized treatment for <strong>Piles</strong>, <strong>Fissures</strong>, <strong>Fistulas</strong>, 
+      <strong>Pilonidal Sinus</strong>, <strong>Hidradenitis</strong>, and <strong>Varicose Veins</strong>, 
+      along with comprehensive <strong>General</strong> and <strong>Laparoscopic Surgery</strong>.
+    </p>
+
+
+    {/* Badges / Highlights */}
+    <div className="trust-badges">
+      <span className="badge">🏥 NABH Certified Hospital</span>
+      <span className="badge">⭐ 15+ Years of Expertise</span>
+      <span className="badge">👨‍⚕️ Premium Healthcare Team</span>
+    </div>
+  </div>
+</section>
+
 
       {/* ---------- WHY CHOOSE US ---------- */}
       <section className="why-us" data-aos="fade-up">
@@ -71,12 +74,12 @@ const Home = () => {
           <div className="why-card">
             <i className="fas fa-stethoscope"></i>
             <h3>Expert Doctors</h3>
-            <p>Highly experienced specialists for piles, fissures, and fistula.</p>
+            <p>Highly experienced specialists in Piles, Fissures, Fistulas, Pilonidal Sinus, Hidradenitis, and Varicose Veins.</p>
           </div>
           <div className="why-card">
             <i className="fas fa-heartbeat"></i>
-            <h3>Cutting-edge Tech</h3>
-            <p>Advanced laser & minimally invasive procedures.</p>
+            <h3>Cutting-edge Technology</h3>
+            <p>Advanced laser and minimally invasive procedures.</p>
           </div>
           <div className="why-card">
             <i className="fas fa-user-shield"></i>
@@ -85,8 +88,8 @@ const Home = () => {
           </div>
           <div className="why-card">
             <i className="fas fa-clock"></i>
-            <h3>24/7 Support</h3>
-            <p>Round-the-clock emergency & helpline service.</p>
+            <h3>Minimally Invasive Procedures</h3>
+            <p>Faster recovery and less discomfort.</p>
           </div>
         </div>
       </section>
@@ -97,63 +100,48 @@ const Home = () => {
         <div className="services-grid">
           <div className="service-card">
             <img src={laserImage} alt="Laser Surgery" />
-            <h3>Laser Surgery</h3>
-            <p>Painless & advanced treatments for piles and fissures.</p>
+            <h3>Laser Proctology</h3>
+            <p>Advanced laser treatment for piles, fissures, fistulas Pilonidal Sinus, Hidradenitis, and Varicose Veins.</p>
           </div>
           <div className="service-card">
-            <img src={surgery} alt="Laparoscopic Care" />
-            <h3>Laparoscopic Care</h3>
-            <p>Minimal invasive procedures with quick recovery.</p>
+            <img src={surgery} alt="General & Laparoscopic Surgeries " />
+            <h3>General & Laparoscopic Surgeries </h3>
+            <p>Safe and minimally invasive surgical solutions.</p>
           </div>
           <div className="service-card">
-            <img src={ward} alt="24/7 Emergency" />
-            <h3>24/7 Emergency</h3>
-            <p>Round-the-clock support for urgent medical needs.</p>
+            <img src={ward} alt="Laser Treatment for Hidradenitis " />
+            <h3>Laser Treatment for Hidradenitis </h3>
+            <p>Effective care for chronic skin infections.</p>
           </div>
           <div className="service-card">
-            <img src={hospitalImage} alt="Consultation" />
-            <h3>Expert Consultation</h3>
-            <p>Specialized doctors for accurate diagnosis & guidance.</p>
+            <img src={hospitalImage} alt="Anal Wart Removal" />
+            <h3>Anal Wart Removal </h3>
+            <p>Quick and precise removal with minimal discomfort.</p>
           </div>
           <div className="service-card">
-            <img src={Pharmacy} alt="Pharmacy" />
-            <h3>In-House Pharmacy</h3>
-            <p>Get all medicines & essentials within our hospital.</p>
+            <img src={Pharmacy} alt="Varicose Veins Treatment" />
+            <h3>Varicose Veins Treatment</h3>
+            <p>Modern techniques for pain relief and vein health.</p>
           </div>
           <div className="service-card">
-            <img src={icu} alt="ICU Care" />
-            <h3>ICU & Recovery</h3>
-            <p>World-class critical care with experienced staff.</p>
+            <img src={icu} alt="Circumcision " />
+            <h3>Circumcision </h3>
+            <p>Safe procedures for medical and personal needs.</p>
           </div>
           <div className="service-card">
-            <img src={lab} alt="Diagnostics" />
-            <h3>Diagnostics & Lab</h3>
-            <p>On-site laboratory for quick and accurate results.</p>
+            <img src={lab} alt="Lump Excision<" />
+            <h3>Lump Excision</h3>
+            <p>Removal of abnormal growths with expert precision.</p>
           </div>
           <div className="service-card">
-            <img src={ambulance} alt="Ambulance Service" />
-            <h3>Ambulance Service</h3>
-            <p>24/7 ambulance support for emergency transport.</p>
+            <img src={ambulance} alt="Diabetic Foot & Varicose Ulcer Care" />
+            <h3>Diabetic Foot & Varicose Ulcer Care</h3>
+            <p>Specialized wound care and healing support.</p>
           </div>
         </div>
       </div>
 
-      {/* ---------- GALLERY PREVIEW ---------- */}
-      <div className="gallery-preview" data-aos="fade-up">
-        <h2>Our Facilities</h2>
-        <div className="gallery-grid">
-          <img src={operatingTheatre} alt="Operating Theatre" />
-          <img src={waitingRoom} alt="Waiting Room" />
-          <img src={nurse} alt="Nurse" />
-          <img src={hospitalImage} alt="Reception" />
-          <img src={surgery} alt="ICU" />
-          <img src={doctorsTeamImage} alt="Pharmacy" />
-          <img src={ward} alt="Wards" />
-          <img src={laserImage} alt="Diagnostics" />
-          <img src={ambulance} alt="Ambulance" />
-          <img src={cafeteria} alt="Cafeteria" />
-        </div>
-      </div>
+    
 
       {/* ---------- ACHIEVEMENTS ---------- */}
       <section className="achievements" data-aos="fade-up">
@@ -161,23 +149,23 @@ const Home = () => {
         <div className="achievements-grid">
           <div className="achievement-card blue">
             <i className="fas fa-user-md"></i>
-            <h3>10K+</h3>
-            <p>Patients Treated</p>
+            <h3>15+</h3>
+            <p>Years of Experience</p>
           </div>
           <div className="achievement-card green">
             <i className="fas fa-calendar-check"></i>
-            <h3>20+</h3>
-            <p>Years of Experience</p>
+            <h3>10K+</h3>
+            <p>Patients Treated</p>
           </div>
           <div className="achievement-card orange">
             <i className="fas fa-users"></i>
-            <h3>50+</h3>
-            <p>Expert Staff</p>
+            <h3>100%</h3>
+            <p>Patient Satisfaction</p>
           </div>
           <div className="achievement-card pink">
             <i className="fas fa-heart"></i>
-            <h3>100%</h3>
-            <p>Patient Satisfaction</p>
+            <h3>Expert Team</h3>
+            <p>Skilled doctors, nurses, and paramedical staff</p>
           </div>
         </div>
       </section>
@@ -189,22 +177,22 @@ const Home = () => {
           <div className="card">
             <i className="fas fa-hand-holding-heart"></i>
             <h3>Compassion</h3>
-            <p>We treat every patient with empathy, respect, and care.</p>
+            <p> Caring for every patient with empathy and respect.</p>
           </div>
           <div className="card">
             <i className="fas fa-certificate"></i>
             <h3>Excellence</h3>
-            <p>Delivering world-class healthcare with latest technology.</p>
+            <p>Delivering top-quality healthcare with advanced technology.</p>
           </div>
           <div className="card">
             <i className="fas fa-users"></i>
             <h3>Integrity</h3>
-            <p>Transparent and ethical medical practices, always.</p>
+            <p>Transparent and ethical medical practices.</p>
           </div>
-          <div className="card award">
+          <div className="card">
             <i className="fas fa-trophy"></i>
-            <h3>Awards & Recognition</h3>
-            <p>NABH certified and recognized for outstanding patient care.</p>
+            <h3>Clean & Hygienic Premises </h3>
+            <p>Maintained with strict hygiene and sanitization for a safe and healthy environment.</p>
           </div>
         </div>
       </section>

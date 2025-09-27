@@ -75,7 +75,7 @@ const Navbar = () => {
               ].map(({ label, path }) => (
                 <li key={label} className="nav-item">
                   <NavLink 
-                    to={path} 
+                    to={path}  
                     className={({ isActive }) => 
                       isActive ? "nav-link active" : "nav-link"
                     }

@@ -3,11 +3,15 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
 // SCSS Variables
-$primary-blue: #3b82f6;
+$primary-blue: #0559e2;
 $primary-purple: #8b5cf6;
-$primary-pink: #ec4899;
-$primary-red: #ef4444;
+$primary-pink: #0ef021;
+$primary-red: #011256;
 $primary-cyan: #06b6d4;
+$primary-dark-blue: #043874; // Dark blue
+$primary-green: #17db14;     // Green
+
+$gradient-topbar: linear-gradient(135deg, $primary-green 0%, $primary-dark-blue 100%);
 
 $gradient-primary: linear-gradient(135deg, $primary-blue 0%, $primary-purple 100%);
 $gradient-secondary: linear-gradient(135deg, $primary-pink 0%, $primary-red 100%);
@@ -131,7 +135,7 @@ body {
 
 // Top Bar Styles
 .topbar {
-  background: $gradient-primary;
+  background: $gradient-topbar;
   padding: 0.5rem 0;
   transition: $transition-normal;
   overflow: hidden;
@@ -540,37 +544,71 @@ body {
     }
   }
 
-  .services-dropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: $white;
-    box-shadow: $shadow-xl;
-    border-radius: $border-radius-md;
-    padding: 0.5rem 0;
-    min-width: 250px;
-    z-index: 1000;
-    animation: fadeInUp 0.3s ease;
-    
-    .dropdown-item {
-      display: block;
-      padding: 0.75rem 1.5rem;
-      color: $gray-700;
-      text-decoration: none;
-      transition: $transition-fast;
-      font-size: 0.9rem;
-      
-      &:hover {
-        background: $gray-100;
-        color: $primary-blue;
-      }
+  /* 1.  Desktop dropdown frame + border-glow */
+.services-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: $white;
+  box-shadow: $shadow-xl;
+  border-radius: $border-radius-md;
+  padding: 0.5rem 0;
+  min-width: 250px;
+  z-index: 1000;
+  animation: fadeInUp 0.3s ease;
 
-      &.active {
-        background: $primary-blue;
-        color: $white;
-      }
-    }
+  /* 🔥 NEW: gradient border trick */
+  border: 1px solid transparent;
+  background-image:
+    linear-gradient($white,$white),                      /* inner fill   */
+    $gradient-topbar;                                    /* outer border */
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+/* 2.  Hover & active = Metro green */
+.services-dropdown .dropdown-item {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: $gray-700;
+  text-decoration: none;
+  transition: $transition-fast;
+  font-size: 0.9rem;
+
+  &:hover {
+    background: rgba($primary-green, .08);
+    color: $primary-green;
   }
+
+  &.active {
+    background: $primary-green;
+    color: $white;
+  }
+}
+.services-dropdown .dropdown-item {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: $gray-700;
+  text-decoration: none;
+  transition: $transition-fast;
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba($gray-300, .45);   // ← NEW: subtle separator
+
+  /* remove line on last item */
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background: rgba($primary-green, .08);
+    color: $primary-green;
+  }
+
+  &.active {
+    background: $primary-green;
+    color: $white;
+  }
+}
 
   // Action Buttons
   .navbar-actions {
