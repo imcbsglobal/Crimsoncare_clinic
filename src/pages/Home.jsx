@@ -7,18 +7,23 @@ import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Slider from "react-slick";
 
+// slick styles (required for react-slick dots/arrows)
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+// Assets
 import doctorsTeamImage from "../assets/doctors-team.jpg";
-import hospitalImage from "../assets/hospital.jpg";
+import hospitalImage from "../assets/banner1.jpg";
 import laserImage from "../assets/laser.jpg";
 import surgery from "../assets/surgery.jpg";
 import ward from "../assets/ward.jpg";
-import operatingTheatre from "../assets/operating-theatre.jpeg";
-import waitingRoom from "../assets/waiting-room.jpg";
+import operatingTheatre from "../assets/banner2.jpg";
+import waitingRoom from "../assets/banner3.jpg";
 import nurse from "../assets/nurse.jpg";
 import icu from "../assets/icu.jpg";
 import Pharmacy from "../assets/pharmacy.jpg";
 import lab from "../assets/lab.jpg";
-import ambulance from "../assets/ambulance.jpg";
+import ambulance from "../assets/ambulance1.jpeg";
 import cafeteria from "../assets/cafeteria.jpg";
 
 const Home = () => {
@@ -26,55 +31,100 @@ const Home = () => {
     AOS.init({ duration: 1000, once: true });
   }, []);
 
-  // Slider settings
-  const testimonialSettings = {
+  // ---------- HERO (SLIDER) ----------
+  const heroImages = [hospitalImage, operatingTheatre, waitingRoom];
+
+  const heroSettings = {
     dots: true,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 3500,
-    speed: 700,
+    autoplaySpeed: 4000,
+    speed: 800,
+    fade: true,
+    cssEase: "linear",
+    arrows: false,
+    pauseOnHover: false,
     slidesToShow: 1,
     slidesToScroll: 1,
+  };
+
+  // ---------- WHY-US-TWO (SLIDER) ----------
+  const why2Settings = {
+    dots: true,
+    arrows: true,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    speed: 600,
+    pauseOnHover: false,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      { breakpoint: 1200, settings: { slidesToShow: 3 } },
+      { breakpoint: 900, settings: { slidesToShow: 2 } },
+      { breakpoint: 576, settings: { slidesToShow: 1 } },
+    ],
+  };
+
+  // ---------- TESTIMONIALS (SLIDER) ----------
+  const testimonialSettings = {
+    dots: true,
     arrows: false,
+    autoplay: true,
+    autoplaySpeed: 4500,
+    infinite: true,
+    speed: 600,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    responsive: [{ breakpoint: 992, settings: { slidesToShow: 1 } }],
   };
 
   return (
     <div className="home-page">
       {/* ---------- HERO ---------- */}
-      <section className="hero">
-  <div className="hero-overlay"></div>
-  <div className="hero-content" data-aos="fade-up">
-    {/* Main Heading */}
-    <h1 className="hero-title">
-      Advanced <span className="highlight">Proctology & Surgical Care</span>
-    </h1>
+      <section className="hero hero--slider">
+        <Slider {...heroSettings} className="hero-slick">
+          {heroImages.map((src, i) => (
+            <div key={i} className="hero-slide">
+              <img src={src} alt={`Banner ${i + 1}`} className="hero-bg" />
+              <div className="hero-overlay" />
+              <div className="hero-content" data-aos="fade-up">
+                <div className="hero-inner">
+                  <h1 className="hero-title">
+                    Advanced <span className="highlight">Piles &amp; Fissure</span>
+                    <br />
+                    Treatments
+                  </h1>
 
-    {/* Description */}
-    <p className="hero-description">
-      Specialized treatment for <strong>Piles</strong>, <strong>Fissures</strong>, <strong>Fistulas</strong>, 
-      <strong>Pilonidal Sinus</strong>, <strong>Hidradenitis</strong>, and <strong>Varicose Veins</strong>, 
-      along with comprehensive <strong>General</strong> and <strong>Laparoscopic Surgery</strong>.
-    </p>
+                  <p className="hero-description">
+                    Advanced Proctology &amp; Surgical Care: Specialized treatment for Piles,
+                    Fissures, Fistulas, Pilonidal Sinus, Hidradenitis, and Varicose Veins, along
+                    with comprehensive General and Laparoscopic Surgery.
+                  </p>
 
+                  <div className="trust-badges">
+                    <span className="badge">⭐ Associated with NABH Certified Hospital</span>
+                    <span className="badge">📋 15+ Years of Expertise</span>
+                    <span className="badge">❤️ Premium Healthcare Team</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </section>
 
-    {/* Badges / Highlights */}
-    <div className="trust-badges">
-      <span className="badge">🏥 NABH Certified Hospital</span>
-      <span className="badge">⭐ 15+ Years of Expertise</span>
-      <span className="badge">👨‍⚕️ Premium Healthcare Team</span>
-    </div>
-  </div>
-</section>
-
-
-      {/* ---------- WHY CHOOSE US ---------- */}
+      {/* ---------- WHY CHOOSE US (Existing) ---------- */}
       <section className="why-us" data-aos="fade-up">
         <h2>Why Choose Crimsoncare?</h2>
         <div className="why-grid">
           <div className="why-card">
             <i className="fas fa-stethoscope"></i>
             <h3>Expert Doctors</h3>
-            <p>Highly experienced specialists in Piles, Fissures, Fistulas, Pilonidal Sinus, Hidradenitis, and Varicose Veins.</p>
+            <p>
+              Highly experienced specialists in Piles, Fissures, Fistulas, Pilonidal Sinus,
+              Hidradenitis, and Varicose Veins.
+            </p>
           </div>
           <div className="why-card">
             <i className="fas fa-heartbeat"></i>
@@ -83,15 +133,54 @@ const Home = () => {
           </div>
           <div className="why-card">
             <i className="fas fa-user-shield"></i>
-            <h3>Safe & Hygienic</h3>
-            <p>100% infection control & patient-first approach.</p>
+            <h3>Safe &amp; Hygienic</h3>
+            <p>100% infection control with a patient-first approach.</p>
           </div>
           <div className="why-card">
             <i className="fas fa-clock"></i>
             <h3>Minimally Invasive Procedures</h3>
-            <p>Faster recovery and less discomfort.</p>
+            <p>Faster recovery and less discomfort.</p>
           </div>
         </div>
+      </section>
+
+      {/* ---------- WHY CHOOSE US (NEW – SLIDER) ---------- */}
+      <section className="why-us-two" data-aos="fade-up">
+        <h2>Advanced Treatment for Common Diseases</h2>
+        <Slider {...why2Settings} className="why2-slider">
+          <div className="why2-card">
+            <i className="fas fa-hand-holding-medical"></i>
+            <h3>Piles (Hemorrhoids)</h3>
+            <p>
+              Swollen blood vessels in the rectum or anus causing pain, bleeding, itching, and discomfort, especially during bowel movements. Early treatment and lifestyle changes can help prevent complications.
+            </p>
+          </div>
+          <div className="why2-card">
+            <i className="fas fa-rupee-sign"></i>
+            <h3>Fissures</h3>
+            <p>Small tears in the lining of the anus leading to severe pain, burning sensation, and occasional bleeding during bowel movements. Quick medical care ensures faster healing and relief.</p>
+          </div>
+          <div className="why2-card">
+            <i className="fas fa-hospital-user"></i>
+            <h3>Fistulas</h3>
+            <p>EAbnormal connections between the anal canal and the skin around the anus, often resulting in discharge, pain, and recurrent infections. Surgical treatment is usually required for a permanent cure.</p>
+          </div>
+          <div className="why2-card">
+            <i className="fas fa-headset"></i>
+            <h3>Pilonidal Sinus</h3>
+            <p>A small hole or tunnel in the skin, usually near the tailbone, which can fill with pus or hair, leading to pain and swelling. Early treatment prevents repeated infections.</p>
+          </div>
+          <div className="why2-card">
+            <i className="fas fa-headset"></i>
+            <h3>Hidradenitis Suppurativa</h3>
+            <p>A chronic skin condition marked by painful lumps, abscesses, or pus-filled nodules in areas like armpits or groin, caused by blocked sweat glands. Needs long-term management.</p>
+          </div>
+          <div className="why2-card">
+            <i className="fas fa-headset"></i>
+            <h3>Varicose Veins</h3>
+            <p> Enlarged, twisted veins — most often in the legs — leading to heaviness, swelling, and aching. Advanced treatments can provide relief and improve appearance.</p>
+          </div>
+        </Slider>
       </section>
 
       {/* ---------- SERVICES PREVIEW ---------- */}
@@ -101,16 +190,18 @@ const Home = () => {
           <div className="service-card">
             <img src={laserImage} alt="Laser Surgery" />
             <h3>Laser Proctology</h3>
-            <p>Advanced laser treatment for piles, fissures, fistulas Pilonidal Sinus, Hidradenitis, and Varicose Veins.</p>
+            <p>
+             Advanced laser treatment for piles, fissures, fistulas Pilonidal Sinus, Hidradenitis, and Varicose Veins.
+            </p>
           </div>
           <div className="service-card">
-            <img src={surgery} alt="General & Laparoscopic Surgeries " />
-            <h3>General & Laparoscopic Surgeries </h3>
+            <img src={surgery} alt="General & Laparoscopic Surgeries" />
+            <h3>General & Laparoscopic Surgeries</h3>
             <p>Safe and minimally invasive surgical solutions.</p>
           </div>
           <div className="service-card">
-            <img src={ward} alt="Laser Treatment for Hidradenitis " />
-            <h3>Laser Treatment for Hidradenitis </h3>
+            <img src={waitingRoom} alt="Laser Treatment for Hidradenitis" />
+            <h3>Laser Treatment for Hidradenitis</h3>
             <p>Effective care for chronic skin infections.</p>
           </div>
           <div className="service-card">
@@ -124,24 +215,22 @@ const Home = () => {
             <p>Modern techniques for pain relief and vein health.</p>
           </div>
           <div className="service-card">
-            <img src={icu} alt="Circumcision " />
-            <h3>Circumcision </h3>
+            <img src={icu} alt="Circumcision" />
+            <h3>Circumcision</h3>
             <p>Safe procedures for medical and personal needs.</p>
           </div>
           <div className="service-card">
-            <img src={lab} alt="Lump Excision<" />
+            <img src={lab} alt="Lump Excision" />
             <h3>Lump Excision</h3>
             <p>Removal of abnormal growths with expert precision.</p>
           </div>
           <div className="service-card">
             <img src={ambulance} alt="Diabetic Foot & Varicose Ulcer Care" />
-            <h3>Diabetic Foot & Varicose Ulcer Care</h3>
-            <p>Specialized wound care and healing support.</p>
+            <h3>Diabetic Foot &amp; Varicose Ulcer Care</h3>
+            <p>Specialized wound care and healing support.</p>
           </div>
         </div>
       </div>
-
-    
 
       {/* ---------- ACHIEVEMENTS ---------- */}
       <section className="achievements" data-aos="fade-up">
@@ -165,19 +254,19 @@ const Home = () => {
           <div className="achievement-card pink">
             <i className="fas fa-heart"></i>
             <h3>Expert Team</h3>
-            <p>Skilled doctors, nurses, and paramedical staff</p>
+            <p>Skilled doctors, nurses, and paramedical staff</p>
           </div>
         </div>
       </section>
 
       {/* ---------- OUR VALUES & AWARDS ---------- */}
       <section className="values-awards" data-aos="fade-up">
-        <h2>Our Values & Awards</h2>
+        <h2>Our Values &amp; Awards</h2>
         <div className="values-awards-grid">
           <div className="card">
             <i className="fas fa-hand-holding-heart"></i>
             <h3>Compassion</h3>
-            <p> Caring for every patient with empathy and respect.</p>
+            <p>Caring for every patient with empathy and respect.</p>
           </div>
           <div className="card">
             <i className="fas fa-certificate"></i>
@@ -191,8 +280,8 @@ const Home = () => {
           </div>
           <div className="card">
             <i className="fas fa-trophy"></i>
-            <h3>Clean & Hygienic Premises </h3>
-            <p>Maintained with strict hygiene and sanitization for a safe and healthy environment.</p>
+            <h3>Clean &amp; Hygienic Premises</h3>
+            <p>Maintained with strict hygiene and sanitization.</p>
           </div>
         </div>
       </section>
