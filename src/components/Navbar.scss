@@ -444,6 +444,8 @@ body {
   }
 
   // Desktop Navigation Menu
+    // Desktop Navigation Menu
+    // Desktop Navigation Menu
   .nav-menu {
     display: flex;
     list-style: none;
@@ -462,66 +464,32 @@ body {
     .nav-item {
       position: relative;
 
+      /* =====  ROUNDED-PILL LOOK  ===== */
       .nav-link {
         text-decoration: none;
         color: $gray-700;
-        font-weight: 500;
+        font-weight: 600;
         font-size: 1rem;
-        position: relative;
-        padding: 0.75rem 0;
-        transition: $transition-fast;
+        padding: 0.6rem 1.25rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.35);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(177, 177, 177, 0.45);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        display: inline-block;
         white-space: nowrap;
-
-        &::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          width: 0;
-          height: 3px;
-          background: $gradient-primary;
-          border-radius: 2px;
-          transition: $transition-normal;
-          transform: translateX(-50%);
-        }
-
-        &::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(139, 92, 246, 0.05));
-          border-radius: $border-radius-md;
-          opacity: 0;
-          transition: $transition-fast;
-          z-index: -1;
-        }
 
         &:hover,
         &.active {
+          transform: translateY(-3px) scale(1.03);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
           color: $primary-blue;
-
-          &::after {
-            width: 100%;
-          }
-
-          &::before {
-            opacity: 1;
-          }
-        }
-
-        &.active {
-          &::after {
-            background: $gradient-secondary;
-            height: 4px;
-          }
+          background: rgba(255, 255, 255, 0.55);
         }
       }
     }
   }
-
   // Services dropdown styles
   .nav-item.services-dropdown-trigger {
     position: relative;

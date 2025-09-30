@@ -91,13 +91,13 @@ const Home = () => {
               <div className="hero-content" data-aos="fade-up">
                 <div className="hero-inner">
                   <h1 className="hero-title">
-                    Advanced <span className="highlight">Piles &amp; Fissure</span>
+                    Advanced <span className="highlight">Proctology &amp; Surgical</span>
                     <br />
-                    Treatments
+                    Care
                   </h1>
 
                   <p className="hero-description">
-                    Advanced Proctology &amp; Surgical Care: Specialized treatment for Piles,
+                    Specialized treatment for Piles,
                     Fissures, Fistulas, Pilonidal Sinus, Hidradenitis, and Varicose Veins, along
                     with comprehensive General and Laparoscopic Surgery.
                   </p>

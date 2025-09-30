@@ -4,35 +4,35 @@
   min-height: 100vh;
   width: 100%;
   font-family: "Inter", sans-serif;
-  overflow-x: hidden;   /* ✅ Prevent horizontal scroll */
+  overflow-x: hidden;
 }
 
 /*  ➜  FULL-FIT BANNER  */
 .hero-banner {
   position: relative;
   width: 100%;
-  height: 99vh;          /* ✅ Keep your 98vh */
-  overflow: hidden;      /* ✅ Keep children inside */
-  
+  height: 99vh;
+  overflow: hidden;
+
   .hero-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    max-width: 100%;     /* ✅ Prevents overflow */
+    max-width: 100%;
   }
 
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.45);
+    background: linear-gradient(135deg, rgba(7,186,16,.55) 0%, rgba(32,1,124,.55) 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: #fff;
-    padding: 0 1rem;     /* ✅ Safe padding to avoid overflow */
+    padding: 0 1rem;
 
     h1 {
       font-size: 3.2rem;
@@ -44,7 +44,6 @@
     }
   }
 }
-
 
 /* ---------- EXISTING CONTACT SECTION ---------- */
 .contact {
@@ -58,10 +57,10 @@
     h2 {
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
-      color: #000000;
+      color: #0a4d0a;          /* deep green */
     }
     p {
-      color: #444;
+      color: #2c5282;          /* blue text */
       font-size: 1.1rem;
       line-height: 1.6;
     }
@@ -84,13 +83,13 @@
     gap: 1.5rem;
 
     .info-card {
-      background: linear-gradient(135deg, #ec407a, #d81b60);
+      background: linear-gradient(135deg, #07ba10 0%, #023a93 100%);
       padding: 2rem;
       border-radius: 20px;
       text-align: center;
       color: #fff;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease;
+      box-shadow: 0 6px 15px rgba(0,0,0,.15);
+      transition: transform .3s ease;
 
       &:hover {
         transform: translateY(-8px);
@@ -118,7 +117,7 @@
     background: #fff;
     border-radius: 20px;
     padding: 2.5rem;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,.1);
 
     form {
       display: flex;
@@ -132,10 +131,10 @@
         border: 1px solid #ccc;
         font-size: 1rem;
         width: 100%;
-        transition: border 0.3s ease;
+        transition: border .3s ease;
 
         &:focus {
-          border-color: #c2181e;
+          border-color: #07ba10;
           outline: none;
         }
       }
@@ -145,14 +144,13 @@
         border: none;
         border-radius: 10px;
         cursor: pointer;
-        background: #c2181e;
+        background: linear-gradient(135deg, #07ba10 0%, #023a93 100%);
         color: #fff;
         font-weight: bold;
         font-size: 1rem;
-        transition: all 0.3s ease;
+        transition: all .3s ease;
 
         &:hover {
-          background: #c2181e;
           transform: scale(1.05);
         }
       }
@@ -164,7 +162,7 @@
 
     iframe {
       border-radius: 15px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 6px 20px rgba(0,0,0,.1);
     }
   }
 
@@ -174,7 +172,7 @@
     h3 {
       margin-bottom: 1rem;
       font-size: 1.7rem;
-      color: #222;
+      color: #0a4d0a;
     }
 
     .icons {
@@ -184,15 +182,15 @@
 
       a {
         font-size: 1.3rem;
-        color: #555;
+        color: #023a93;
         background: #fff;
         padding: 0.8rem;
         border-radius: 50%;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0,0,0,.1);
+        transition: all .3s ease;
 
         &:hover {
-          background: #c2181e;
+          background: linear-gradient(135deg, #07ba10 0%, #023a93 100%);
           color: #fff;
           transform: translateY(-5px);
         }
@@ -201,13 +199,13 @@
   }
 
   .contact-cta {
-    background: linear-gradient(135deg, #ec407a, #d81b60);
+    background: linear-gradient(135deg, #07ba10 0%, #023a93 100%);
     padding: 3rem;
     border-radius: 20px;
     max-width: 700px;
     margin: 0 auto;
     color: #fff;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 25px rgba(0,0,0,.15);
 
     h3 {
       font-size: 2rem;
@@ -225,13 +223,13 @@
       border-radius: 12px;
       cursor: pointer;
       background: #fff;
-      color: #c2181e;
+      color: #023a93;
       font-weight: bold;
       font-size: 1rem;
-      transition: all 0.3s ease;
+      transition: all .3s ease;
 
       &:hover {
-        background: #fce4ec;
+        background: #e6fffa;
         transform: scale(1.05);
       }
     }

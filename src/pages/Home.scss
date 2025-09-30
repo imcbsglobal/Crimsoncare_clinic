@@ -289,30 +289,32 @@
   }
 
   .card {
-    border: 1px solid #e2e8f0;
-    border-radius: 16px;
-    padding: 20px;
+    border-radius: 18px;
+    padding: 22px;
     text-align: left;
-    background: #fff;
-    transition: transform .2s ease, box-shadow .2s ease;
+    background: linear-gradient(180deg, #eef7f2 0%, #ffffff 100%);
+    border: 1px solid #cde9d9;
+    box-shadow: 0 2px 0 #0e8e42 inset, 0 10px 24px rgba(15, 23, 42, 0.05);
+    transition: transform .18s ease, box-shadow .18s ease;
 
     i {
       font-size: 24px;
-      color: var(--brand);
+      color: #0e8e42;
       margin-bottom: 10px;
     }
     h3 {
       margin: 0 0 6px;
-      font-weight: 700;
+      font-weight: 800;
+      color: #0b1220;
     }
     p {
       margin: 0;
-      color: var(--muted);
+      color: #475569;
     }
 
     &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+      transform: translateY(-3px);
+      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.10);
     }
   }
 }
@@ -353,9 +355,10 @@
 }
 
 /* ---------- CTA ---------- */
+/* ---------- CTA (Green → Blue) ---------- */
 .cta {
   padding: 72px 16px;
-  background: linear-gradient(135deg, #0f172a, #1f2937);
+  background: linear-gradient(135deg, #07ba10 0%, #20017c 100%); /* green->blue */
   color: #fff;
   text-align: center;
 
@@ -369,19 +372,21 @@
   }
 
   .btn-primary {
-    background: var(--brand);
-    border: none;
-    color: #001018;
+    background: #fff;               /* white button */
+    color: #0e8e42;                 /* green text */
     font-weight: 700;
     border-radius: 999px;
     padding: 0.75rem 1.25rem;
     cursor: pointer;
-    transition: filter .2s ease;
+    transition: all .2s ease;
+    border: none;
 
-    &:hover { filter: brightness(0.95); }
+    &:hover {
+      background: #f0fdfa;          /* very-light green tint */
+      color: #0559e2;               /* switch to blue text */
+    }
   }
 }
-
 
 /* ---------- HERO (like screenshot) ---------- */
 .hero.hero--slider {
@@ -625,5 +630,55 @@
   h3 { font-size: 16px; margin: 6px 0 10px; font-weight: 600; }
   p { font-size: 14px; color: #4b5563; line-height: 1.5; }
 
-  &:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(15,17,21,.10); }
+  &:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1); }
+}
+/* ===== MOBILE HERO ENHANCEMENT ===== */
+/* ===== MOBILE HERO ENHANCEMENT ===== */
+@media (max-width: 768px) {
+  .hero.hero--slider {
+    .hero-slick,
+    .hero-slide {
+      height: 100vh;
+      min-height: 600px;
+    }
+
+    /* push content down so nothing sits under the nav */
+    .hero-content {
+      padding: 25vh 1rem 4rem;   /* top / sides / bottom */
+    }
+
+    .hero-inner {
+      padding: 2rem 1rem;        /* breathing room around text */
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 7vw, 2.75rem);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero-description {
+      font-size: clamp(1rem, 4vw, 1.1rem);
+      max-width: 90vw;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-cta {
+      padding: 0.9rem 1.8rem;
+      font-size: 1rem;
+    }
+
+    .trust-badges {
+      gap: 0.5rem;
+      .badge {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+      }
+    }
+
+    .slick-dots {
+      bottom: 12px;
+      li button:before { font-size: 10px; }
+    }
+  }
 }
