@@ -115,34 +115,57 @@ const Home = () => {
       </section>
 
       {/* ---------- WHY CHOOSE US (Existing) ---------- */}
-      <section className="why-us" data-aos="fade-up">
-        <h2>Why Choose Crimsoncare?</h2>
-        <div className="why-grid">
-          <div className="why-card">
-            <i className="fas fa-stethoscope"></i>
-            <h3>Expert Doctors</h3>
-            <p>
-              Highly experienced specialists in Piles, Fissures, Fistulas, Pilonidal Sinus,
-              Hidradenitis, and Varicose Veins.
-            </p>
-          </div>
-          <div className="why-card">
-            <i className="fas fa-heartbeat"></i>
-            <h3>Cutting-edge Technology</h3>
-            <p>Advanced laser and minimally invasive procedures.</p>
-          </div>
-          <div className="why-card">
-            <i className="fas fa-user-shield"></i>
-            <h3>Safe &amp; Hygienic</h3>
-            <p>100% infection control with a patient-first approach.</p>
-          </div>
-          <div className="why-card">
-            <i className="fas fa-clock"></i>
-            <h3>Minimally Invasive Procedures</h3>
-            <p>Faster recovery and less discomfort.</p>
-          </div>
-        </div>
-      </section>
+     <section className="why-us" data-aos="fade-up">
+  <h2>Why Choose Crimsoncare?</h2>
+  <div className="why-grid">
+    <div className="why-card">
+      <i className="fas fa-stethoscope"></i>
+      <h3>Expert Doctors</h3>
+      <p> 
+        Highly experienced specialists in Piles, Fissures, Fistulas, Pilonidal Sinus,
+        Hidradenitis,  
+      </p>
+    </div>
+    <div className="why-card">
+      <i className="fas fa-heartbeat"></i>
+      <h3>Cutting-edge Technology</h3>
+      <p>Advanced laser and minimally invasive procedures.</p>
+    </div>
+    <div className="why-card">
+      <i className="fas fa-user-shield"></i>
+      <h3>Safe &amp; Hygienic</h3>
+      <p>100% infection control with a patient-first approach.</p>
+    </div>
+    <div className="why-card">
+      <i className="fas fa-clock"></i>
+      <h3>Minimally Invasive Procedures</h3>
+      <p>Faster recovery and less discomfort.</p>
+    </div>
+
+    {/* New Points */}
+    <div className="why-card">
+      <i className="fas fa-smile"></i>
+      <h3>Very Less Pain</h3>
+      <p>Gentle techniques ensure minimal discomfort during treatment.</p>
+    </div>
+    <div className="why-card">
+      <i className="fas fa-tint"></i>
+      <h3>Minimum Bleeding</h3>
+      <p>Precise, advanced methods reduce blood loss significantly.</p>
+    </div>
+    <div className="why-card">
+      <i className="fas fa-briefcase"></i>
+      <h3>Easy Return to Work</h3>
+      <p>Quick recovery helps you get back to routine faster.</p>
+    </div>
+    <div className="why-card">
+      <i className="fas fa-hospital-user"></i>
+      <h3>Day Care Procedure</h3>
+      <p>Same-day discharge without overnight hospital stay.</p>
+    </div>
+  </div>
+</section>
+
 
       {/* ---------- WHY CHOOSE US (NEW – SLIDER) ---------- */}
       <section className="why-us-two" data-aos="fade-up">
@@ -162,8 +185,8 @@ const Home = () => {
           </div>
           <div className="why2-card">
             <i className="fas fa-hospital-user"></i>
-            <h3>Fistulas</h3>
-            <p>EAbnormal connections between the anal canal and the skin around the anus, often resulting in discharge, pain, and recurrent infections. Surgical treatment is usually required for a permanent cure.</p>
+            <h3>Fistula</h3>
+            <p>Abnormal connections between the anal canal and the skin around the anus, often resulting in discharge, pain, and recurrent infections. Surgical treatment is usually required for a permanent cure.</p>
           </div>
           <div className="why2-card">
             <i className="fas fa-headset"></i>
@@ -191,7 +214,7 @@ const Home = () => {
             <img src={laserImage} alt="Laser Surgery" />
             <h3>Laser Proctology</h3>
             <p>
-             Advanced laser treatment for piles, fissures, fistulas Pilonidal Sinus, Hidradenitis, and Varicose Veins.
+             Advanced laser treatment for piles, fissures, fistulas Pilonidal Sinus.
             </p>
           </div>
           <div className="service-card">
