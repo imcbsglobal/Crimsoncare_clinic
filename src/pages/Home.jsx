@@ -122,8 +122,7 @@ const Home = () => {
       <i className="fas fa-stethoscope"></i>
       <h3>Expert Doctors</h3>
       <p> 
-        Highly experienced specialists in Piles, Fissures, Fistulas, Pilonidal Sinus,
-        Hidradenitis,  
+        Highly experienced specialists in Piles, Fissures, Fistulas, Pilonidal Sinus.
       </p>
     </div>
     <div className="why-card">
