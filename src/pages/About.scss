@@ -70,7 +70,7 @@
   .divider {
     width: 60px;
     height: 4px;
-    background: #c0392b;
+    background: #0e8e42;
     margin: 0 auto 2rem;
   }
 
@@ -94,6 +94,7 @@
 }
 
 /* ----------  CARDS  ---------- */
+/* ----------  CARDS  ---------- */
 .about-cards {
   display: flex;
   flex-wrap: wrap;
@@ -102,14 +103,16 @@
   margin-bottom: 4rem;
 
   .card {
-    background: #fff;
-    border: 1px solid #e0e0e0;
+    background: linear-gradient(180deg, #eef7f2 0%, #ffffff 100%);
+    border: 1px solid #cde9d9;
     padding: 2rem;
-    border-radius: 12px;
+    border-radius: 18px;
     flex: 1 1 300px;
     max-width: 350px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-    transition: 0.3s ease;
+    box-shadow:
+      0 2px 0 #0e8e42 inset,
+      0 10px 24px rgba(15, 23, 42, 0.05);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
 
     h3 { font-size: 1.3rem; margin-bottom: 1rem; }
 
@@ -119,20 +122,21 @@
     }
 
     &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      transform: translateY(-3px);
+      box-shadow:
+        0 2px 0 #0e8e42 inset,
+        0 14px 28px rgba(15, 23, 42, 0.10);
     }
   }
 
-  .card-icon  { font-size: 2rem; margin-bottom: 0.75rem; }
+  .card-icon  { font-size: 2rem; margin-bottom: 0.75rem; color: #0e8e42; }
   .card-divider {
     width: 40px;
     height: 3px;
-    background: #c0392b;
+    background: #0e8e42;
     margin: 0.5rem 0 1rem;
   }
 }
-
 /* ----------  STATS  ---------- */
 .about-stats {
   display: flex;
@@ -141,13 +145,17 @@
   margin: 4rem 0;
 
   .stat {
-    background: #fff;
+    background: linear-gradient(180deg, #eef7f2 0%, #ffffff 100%);
+    border: 1px solid #cde9d9;
     padding: 2rem 3rem;
-    border-radius: 10px;
+    border-radius: 18px;
     text-align: center;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    box-shadow:
+      0 2px 0 #0e8e42 inset,
+      0 10px 24px rgba(15, 23, 42, 0.05);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
 
-    h2 { font-size: 2.5rem; color: #c0392b; }
+    h2 { font-size: 2.5rem; color: #0e8e42; }
 
     p { font-size: 1.1rem; margin-top: 0.5rem; font-weight: 500; }
   }
@@ -155,7 +163,7 @@
   .stat-divider {
     width: 30px;
     height: 3px;
-    background: #c0392b;
+    background: #0e8e42;
     margin: 0.5rem auto;
   }
 }
@@ -178,9 +186,9 @@
   }
 
   .btn-primary {
-    background: #c0392b;
+    background: #0e8e42;
     color: #fff;
-    &:hover { background: #a93226; }
+    &:hover { background: #0e8e42; }
   }
 
   .btn-secondary {
