@@ -360,7 +360,8 @@
     min-height: auto;
 
     .hero-content p {
-      text-align: center;
+      text-align: justify;
+      text-align-last: center;
     }
   }
 
@@ -369,7 +370,8 @@
     padding: 0 1rem;
 
     > p {
-      text-align: left;
+      text-align: justify;
+      text-align-last: center;
     }
 
     .features {
