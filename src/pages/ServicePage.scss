@@ -74,7 +74,7 @@
         margin-top: 2rem;
         padding: 1.5rem;
         background: #f9fafb;
-        border-left: 5px solid #ef4444;   /* 🔴 red border */
+        border-left: 5px solid #0ea5e9;   /* 🔵 blue border */
         border-radius: 0.75rem;
         transition: all 0.3s ease;
 
@@ -88,7 +88,7 @@
 
         .btn-primary {
           margin-top: 1rem;
-          background: linear-gradient(90deg, #ef4444, #b91c1c); /* 🔴 red gradient */
+          background: linear-gradient(90deg, #0ea5e9, #0284c7); /* 🔵 blue gradient */
           color: white;
           padding: 0.75rem 1.5rem;
           border: none;
@@ -102,7 +102,7 @@
           display: inline-block;  
 
           &:hover {
-            background: linear-gradient(90deg, #dc2626, #991b1b); /* 🔴 darker red on hover */
+            background: linear-gradient(90deg, #0284c7, #0447cd); /* 🔵 darker blue on hover */
           }
         }
       }
@@ -156,7 +156,7 @@
 
         i {
           font-size: 2rem;
-          color: #ef4444; /* 🔴 red icons */
+          color: #037416; /* 🟢 green icons */
           margin-bottom: 0.75rem;
         }
 
