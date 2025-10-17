@@ -2,7 +2,7 @@ import React from "react";
 import "./About.scss";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
-import bannerBg from "../assets/about-banner.jpg";   // ①  banner image
+import bannerBg from "../assets/about-banner.jpg";
 
 const About = () => {
   return (
@@ -10,7 +10,7 @@ const About = () => {
       {/* --------------  FULL-WIDTH BANNER  -------------- */}
       <section
         className="about-hero-banner"
-        style={{ backgroundImage: `url(${bannerBg})` }}  // ②  use it here
+        style={{ backgroundImage: `url(${bannerBg})` }}
       >
         <div className="hero-content" data-aos="fade-up">
           <div className="pre-title">Excellence in Proctology Care</div>
@@ -36,7 +36,7 @@ const About = () => {
             Located at the centre of the The centre aims to provide the quality of life of the patients through
             advanced laser treatment and other minimally invasive procedures which cause very less pain and bleed.
             Unlike other clinics, Crimson Health care serves as a second opinion centre for all proctology anr colorectal diseases.
-            The highly experienced team of doctors, nurses and other paramedical professionals provide exceptional care, counselling and followup for enhancing better and quality life.
+            The highly experienced team of doctors, nurses and other paramedical professionals provide exceptional care, counselling and followup for enhancing better and quality life.
           </p>
 
           <ul className="features">
@@ -59,6 +59,33 @@ const About = () => {
           </ul>
         </div>
 
+        {/* Why Patient Trust Us Card */}
+        <div className="trust-card-wrapper" data-aos="fade-up">
+          <div className="trust-card">
+            <div className="trust-card-icon">🤝</div>
+            <h2>Why Patients Trust Us</h2>
+            <div className="trust-card-divider"></div>
+            <ul className="trust-features">
+              <li>
+                <span className="icon">✓</span>
+                <span>Patient centered approach</span>
+              </li>
+              <li>
+                <span className="icon">✓</span>
+                <span>Regular followup over phone</span>
+              </li>
+              <li>
+                <span className="icon">✓</span>
+                <span>Queries answered by experts over phone</span>
+              </li>
+              <li>
+                <span className="icon">✓</span>
+                <span>Availability of multidisciplinary team whenever needed</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
         {/* Mission / Vision / Trust Cards */}
         <div className="about-cards" data-aos="fade-up">
           <div className="card">
@@ -75,7 +102,7 @@ const About = () => {
             <h3>Our Vision</h3>
             <div className="card-divider"></div>
             <p>
-              To establish as centre for excellence in minimally invasive and laser surgeries with patient centered approach
+              To establish as centre for excellence in minimally invasive and laser surgeries with patient centered approach
             </p>
           </div>
 

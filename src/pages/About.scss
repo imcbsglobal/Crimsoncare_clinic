@@ -1,4 +1,4 @@
-/* ========== VERSION 1: MODERN GRADIENT STYLE ========== */
+/* ========== MODERN GRADIENT STYLE ========== */
 
 /* ----------  GLOBAL PAGE WRAPPER  ---------- */
 .about {
@@ -19,9 +19,7 @@
 }
 
 /* ----------  FULL-VIEWPORT BANNER WITH IMAGE  ---------- */
-/* ----------  FULL-VIEWPORT BANNER WITH IMAGE  ---------- */
 .about-hero-banner {
-  /* ---- 1. load the font (swap for any other Google font) ---- */
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
   position: relative;
@@ -33,8 +31,6 @@
   background: center/cover no-repeat;
   text-align: center;
   color: #fff;
-
-  /* ---- 2. set the same face for everything inside ---- */
   font-family: 'Poppins', sans-serif;
 
   &::before {
@@ -57,7 +53,7 @@
       color: #81c784;
       margin-bottom: 1rem;
       font-weight: 600;
-      font-family: inherit;   /* keeps Poppins */
+      font-family: inherit;
     }
 
     h1 {
@@ -124,6 +120,102 @@
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+
+    li {
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      color: #1b5e20;
+      text-align: left;
+      padding: 0.5rem;
+      
+      .icon {
+        color: #0d47a1;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+      }
+
+      span:last-child {
+        flex: 1;
+      }
+    }
+  }
+}
+
+/* ----------  TRUST CARD  ---------- */
+.trust-card-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.trust-card {
+  background: linear-gradient(145deg, #d0f0c0 0%, #e8f5e9 40%, #f1f8e9 100%);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  padding: 3rem;
+  border-radius: 24px;
+  max-width: 800px;
+  width: 100%;
+  box-shadow:
+    0 8px 32px rgba(46,125,50,.15),
+    0 2px 8px rgba(46,125,50,.1);
+  transition: all .25s cubic-bezier(.4,0,.2,1);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    z-index: -1;
+    border-radius: inherit;
+    background: linear-gradient(135deg, #2e7d32, #66bb6a, #a5d6a7);
+    mask: linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+  }
+
+  &:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow:
+      0 20px 40px rgba(46,125,50,.25),
+      0 8px 16px rgba(46,125,50,.15);
+  }
+
+  .trust-card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 2px 4px rgba(76,175,80,.4));
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #1b5e20, #0d47a1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .trust-card-divider {
+    width: 80px;
+    height: 5px;
+    background: linear-gradient(90deg, #2e7d32, #0d47a1);
+    margin: 0 auto 2rem;
+    border-radius: 3px;
+  }
+
+  .trust-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 
     li {
       font-weight: 600;
@@ -375,6 +467,19 @@
     }
 
     .features {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+
+  .trust-card-wrapper {
+    padding: 0 1rem;
+  }
+
+  .trust-card {
+    padding: 2rem 1.5rem;
+
+    .trust-features {
       grid-template-columns: 1fr;
       gap: 1rem;
     }
