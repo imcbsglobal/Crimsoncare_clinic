@@ -18,7 +18,7 @@
 .page-title {
   font-size: 2.2rem;
   font-weight: 700;
-  color: #c2181e;           //  ➜  RED
+  color: #023a93;           //  ➜  BLUE
   margin-bottom: 2.5rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -57,8 +57,8 @@
     transition: all 0.3s ease;
 
     &:focus {
-      border-color: #c2181e;                 //  ➜  RED
-      box-shadow: 0 0 6px rgba(194, 24, 30, 0.4);
+      border-color: #023a93;                 //  ➜  BLUE
+      box-shadow: 0 0 6px rgba(2, 58, 147, 0.4);
     }
   }
 
@@ -69,7 +69,7 @@
 }
 
 .submit-btn {
-  background: linear-gradient(135deg, #c2181e, #e53935); //  ➜  RED
+  background: linear-gradient(135deg, #07ba10 0%, #023a93 100%); //  ➜  GREEN TO BLUE
   color: #fff;
   font-weight: 600;
   border: none;
@@ -81,7 +81,7 @@
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 15px rgba(194, 24, 30, 0.3);
+    box-shadow: 0 8px 15px rgba(7, 186, 16, 0.3);
   }
 }
 
@@ -96,7 +96,7 @@
     font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: #c2181e;           //  ➜  RED
+    color: #07ba10;           //  ➜  GREEN
   }
 }
 
@@ -117,7 +117,7 @@
     color: #444;
 
     svg {
-      color: #c2181e;         //  ➜  RED
+      color: #07ba10;         //  ➜  GREEN
     }
   }
 }
