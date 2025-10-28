@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import "./Gallery.scss";
 import Footer from "../components/Footer";
 
-import operatingTheatre from "../assets/operating-theatre.jpeg";
+import operatingTheatre from "../assets/operating-theatre.webp";
 import laserEquipment from "../assets/laser-equipment.jpeg";
 import patientRecovery from "../assets/patient-recovery.jpg";
 import ward from "../assets/ward.jpg";
 import consultation from "../assets/consultation.jpg";
 import waitingRoom from "../assets/waiting-room.jpg";
-import canteen from "../assets/canteen.jpeg";
-import nurse from "../assets/nurse.jpg";
-import ambulance from "../assets/ambulance.jpg";
-import cafeteria from "../assets/cafeteria.jpg";
+import hospitalpharmacy from "../assets/hospital-pharmacy.webp";
+import doctorroom from "../assets/doctor-room.jpeg";
+import reception from "../assets/reception.jpg";
+import rooms from "../assets/rooms.jpeg";
 import galleryBanner from "../assets/gallery-banner.jpg";   // <-- NEW
 
 const Gallery = () => {
@@ -22,10 +22,10 @@ const Gallery = () => {
     { src: ward, caption: "24/7 Emergency Ward" },
     { src: consultation, caption: "Specialized Consultation Room" },
     { src: waitingRoom, caption: "Spacious Waiting Area" },
-    { src: canteen, caption: "Hygienic Canteen Facility" },
-    { src: nurse, caption: "Friendly Nursing Staff" },
-    { src: ambulance, caption: "Emergency Ambulance Service" },
-    { src: cafeteria, caption: "Comfortable Cafeteria" }
+    { src: hospitalpharmacy, caption: "Pharmacy Facility" },
+    { src: doctorroom, caption: "Doctor's Room" },
+    { src: reception, caption: "Hospital reception" },
+    { src: rooms, caption: "Comfortable rooms" }
   ];
 
   const [selectedImage, setSelectedImage] = useState(null);
@@ -36,7 +36,7 @@ const Gallery = () => {
       <section className="hero-banner">
         <img src={galleryBanner} alt="PilesCare Hospital" className="hero-img" />
         <div className="hero-overlay">
-          <h1>Caring Spaces at PilesCare Hospital</h1>
+          <h1>Healing with Crimson Health Care</h1>
           <p>State-of-the-art facilities, compassionate care.</p>
         </div>
       </section>
@@ -45,7 +45,7 @@ const Gallery = () => {
         <div className="gallery-header" data-aos="fade-down">
           <h2>Our Hospital & Facilities</h2>
           <p>
-            Take a glimpse into <strong>PilesCare Hospital</strong>. We maintain a
+            Take a glimpse into <strong>Crimsonscare Clinics</strong>. We maintain a
             world-class environment with state-of-the-art facilities to ensure
             patient comfort and safety.
           </p>
