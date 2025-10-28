@@ -1,7 +1,7 @@
 // src/pages/LumpExcisions.jsx
 import React from "react";
 import "./ServicePage.scss";
-import lumpImg from "../assets/lump.jpg"; // ✅ side image
+import lumpImg from "../assets/lump.jpeg"; // ✅ side image
 import bannerImg from "../assets/lump-banner.jpg"; // ✅ wide banner image
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";

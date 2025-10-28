@@ -20,6 +20,7 @@ const Navbar = () => {
   // ✅ Services dropdown items with paths
   const servicesItems = [
     { label: "LASER PROCTOLOGY", path: "/laser-proctology" },
+    { label: "PILES / HEMORRHOIDS", path: "/hemorrhoids" },
     { label: "GENERAL & LAPAROSCOPIC SURGERIES", path: "/general-surgeries" },
     { label: "LASER TREATMENT FOR HIDRADENITIS", path: "/hidradentitis" },
     { label: "ANAL WART REMOVAL", path: "/anal-wart-removal" },

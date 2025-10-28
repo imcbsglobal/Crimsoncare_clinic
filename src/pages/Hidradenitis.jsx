@@ -1,8 +1,8 @@
 // src/pages/Hidradenitis.jsx
 import React from "react";
 import "./ServicePage.scss";
-import hidradenitisImg from "../assets/hidradenitis.jpg"; // side image
-import bannerImg from "../assets/hidradenitis-banner.jpg"; // ✅ add a wide banner image
+import hidradenitisImg from "../assets/hidradenitis.webp"; // side image
+import bannerImg from "../assets/hidradenitis-banner.webp"; // ✅ add a wide banner image
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 

@@ -1,8 +1,8 @@
 // src/pages/DiabeticFoot.jsx
 import React from "react";
 import "./ServicePage.scss";
-import diabeticFootImg from "../assets/diabetic-foot.jpg"; // ✅ side image
-import bannerImg from "../assets/diabetic-foot-banner.jpg"; // ✅ wide banner image
+import diabeticFootImg from "../assets/varicose-ulcer.jpeg"; // ✅ side image
+import bannerImg from "../assets/diabetic-foot-banner.webp"; // ✅ wide banner image
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 

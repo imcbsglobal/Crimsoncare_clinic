@@ -19,6 +19,7 @@ import VaricoseVeins from "./pages/VaricoseVeins";
 import Circumcisions from "./pages/Circumcisions";
 import LumpExcisions from "./pages/LumpExcisions";
 import DiabeticFoot from "./pages/DiabeticFoot";
+import Hemorrhoids from "./pages/Hemorrhoids";
 
 
 
@@ -43,6 +44,7 @@ function App() {
         <Route path="/lump-excisions" element={<LumpExcisions />} />
         <Route path="/diabetic-foot" element={<DiabeticFoot />} />
         <Route path="/book-appointment" element={<BookAppointment />} />
+        <Route path="/hemorrhoids" element={<Hemorrhoids />} />
 
 
 
