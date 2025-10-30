@@ -12,20 +12,17 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 // Assets
-import doctorsTeamImage from "../assets/doctors-team.jpg";
 import hospitalImage from "../assets/banner1.jpg";
 import laserImage from "../assets/laser.jpg";
 import surgery from "../assets/surgery.jpg";
-import ward from "../assets/ward.jpg";
 import operatingTheatre from "../assets/banner2.jpg";
 import waitingRoom from "../assets/banner3.jpg";
-import nurse from "../assets/nurse.jpg";
 import icu from "../assets/icu.jpg";
-import Pharmacy from "../assets/pharmacy.jpg";
-import lab from "../assets/lab.jpg";
-import ambulance from "../assets/ambulance1.jpeg";
-import cafeteria from "../assets/cafeteria.jpg";
-
+import Hidradenitishome from "../assets/hidradenitis-home.jpg";
+import Diabetic from "../assets/diabetic-home.jpg";
+import Varicose from "../assets/varicose-home.webp";
+import Lump from "../assets/lump-home.jpeg";
+import Hemorrhoids from "../assets/hemorrhoids-home.webp";
 const Home = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
@@ -222,7 +219,7 @@ const Home = () => {
             <p>Safe and minimally invasive surgical solutions.</p>
           </div>
           <div className="service-card">
-            <img src={waitingRoom} alt="Laser Treatment for Hidradenitis" />
+            <img src={Hidradenitishome} alt="Laser Treatment for Hidradenitis" />
             <h3>Laser Treatment for Hidradenitis</h3>
             <p>Effective care for chronic skin infections.</p>
           </div>
@@ -232,7 +229,7 @@ const Home = () => {
             <p>Quick and precise removal with minimal discomfort.</p>
           </div>
           <div className="service-card">
-            <img src={Pharmacy} alt="Varicose Veins Treatment" />
+            <img src={Varicose} alt="Varicose Veins Treatment" />
             <h3>Varicose Veins Treatment</h3>
             <p>Modern techniques for pain relief and vein health.</p>
           </div>
@@ -242,14 +239,19 @@ const Home = () => {
             <p>Safe procedures for medical and personal needs.</p>
           </div>
           <div className="service-card">
-            <img src={lab} alt="Lump Excision" />
+            <img src={Lump} alt="Lump Excision" />
             <h3>Lump Excision</h3>
             <p>Removal of abnormal growths with expert precision.</p>
           </div>
           <div className="service-card">
-            <img src={ambulance} alt="Diabetic Foot & Varicose Ulcer Care" />
+            <img src={Diabetic} alt="Diabetic Foot & Varicose Ulcer Care" />
             <h3>Diabetic Foot &amp; Varicose Ulcer Care</h3>
             <p>Specialized wound care and healing support.</p>
+          </div>
+          <div className="service-card">
+            <img src={Hemorrhoids} alt="hemorrhoids" />
+            <h3>hemorrhoids</h3>
+            <p>Safe and effective care for hemorrhoids.</p>
           </div>
         </div>
       </div>
