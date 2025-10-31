@@ -45,7 +45,7 @@ const Gallery = () => {
         <div className="gallery-header" data-aos="fade-down">
           <h2>Our Hospital & Facilities</h2>
           <p>
-            Take a glimpse into <strong>Crimsonscare Clinics</strong>. We maintain a
+            Take a glimpse into <strong>Crimson Health Care</strong>. We maintain a
             world-class environment with state-of-the-art facilities to ensure
             patient comfort and safety.
           </p>
