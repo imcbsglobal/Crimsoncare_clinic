@@ -592,6 +592,7 @@
     }
   }
 }
+
 /* ---- Why Choose Us Two (Slider) ---- */
 .why-us-two {
   padding: 56px 0 40px;
@@ -606,7 +607,12 @@
 
 .why2-slider {
   .slick-list { margin: 0 -12px; }
-  .slick-slide { padding: 0 12px; }
+  .slick-slide {
+    padding: 0 12px;
+    display: flex !important;
+    justify-content: center;
+    align-items: stretch;
+  }
 
   .slick-dots { bottom: -30px; }
   .slick-dots li button:before {
@@ -631,6 +637,9 @@
   text-align: center;
   box-shadow: 0 10px 26px rgba(15,17,21,.06);
   transition: transform .18s ease, box-shadow .18s ease;
+  box-sizing: border-box;
+  word-break: break-word;
+  white-space: normal;
 
   i { font-size: 30px; color: #0ea5e9; margin-bottom: 12px; display: inline-block; }
   h3 { font-size: 16px; margin: 6px 0 10px; font-weight: 600; }
@@ -638,6 +647,7 @@
 
   &:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1); }
 }
+
 /* ===== MOBILE HERO ENHANCEMENT ===== */
 @media (max-width: 768px) {
   .hero.hero--slider {
