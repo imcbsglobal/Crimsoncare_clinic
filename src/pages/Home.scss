@@ -667,3 +667,159 @@
     }
   }
 }
+/* ===== CRITICAL MOBILE SLIDER FIXES ===== */
+
+/* 1. Fix touch interaction issues */
+.hero.hero--slider {
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y pinch-zoom;
+}
+
+.hero-slick {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* 2. Ensure slick slider elements are properly sized on mobile */
+@media (max-width: 768px) {
+  .hero.hero--slider {
+    .slick-list,
+    .slick-track {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      touch-action: pan-y;
+    }
+
+    .hero-slick,
+    .hero-slide {
+      height: 100vh;
+      min-height: 600px;
+      width: 100%;
+    }
+
+    /* Fix content positioning */
+    .hero-content {
+      padding: 20vh 1rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-inner {
+      padding: 1.5rem 1rem;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .hero-title {
+      font-size: clamp(1.75rem, 6.5vw, 2.5rem);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero-description {
+      font-size: clamp(0.95rem, 4vw, 1.1rem);
+      max-width: 95%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-cta {
+      padding: 0.85rem 1.6rem;
+      font-size: 1rem;
+      width: auto;
+      display: inline-block;
+    }
+
+    .trust-badges {
+      gap: 0.5rem;
+      margin-top: 1rem;
+      
+      .badge {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+      }
+    }
+
+    /* Fix slider controls */
+    .slick-dots {
+      bottom: 16px;
+      z-index: 3;
+      
+      li {
+        margin: 0 3px;
+      }
+      
+      li button:before {
+        font-size: 10px;
+        color: #fff;
+        opacity: 0.6;
+      }
+      
+      li.slick-active button:before {
+        color: #ffcc00;
+        opacity: 1;
+      }
+    }
+
+    /* Hide arrows on mobile for cleaner look */
+    .slick-prev,
+    .slick-next {
+      display: none !important;
+    }
+  }
+}
+
+/* 3. Fix for very small phones */
+@media (max-width: 576px) {
+  .hero.hero--slider {
+    .hero-slick,
+    .hero-slide {
+      height: 100vh;
+      min-height: 540px;
+    }
+
+    .hero-content {
+      padding: 18vh 0.75rem 3rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.5rem, 8vw, 2rem);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-description {
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .btn-cta {
+      padding: 0.75rem 1.4rem;
+      font-size: 0.95rem;
+    }
+
+    .trust-badges .badge {
+      font-size: 0.75rem;
+      padding: 0.35rem 0.7rem;
+    }
+  }
+}
+
+/* 4. Prevent zoom on double-tap (iOS Safari fix) */
+@media (max-width: 768px) {
+  .hero-slick,
+  .slick-slide,
+  .hero-content {
+    touch-action: manipulation;
+  }
+}
+
+/* 5. Fix background image on mobile */
+@media (max-width: 768px) {
+  .hero.hero--slider .hero-bg {
+    object-position: center center; /* Better centering on mobile */
+    width: 100%;
+    height: 100%;
+  }
+}
