@@ -548,65 +548,15 @@
     margin-bottom: 1.25rem;
     color: #0f172a;
   }
-
-  .why2-grid {
-    max-width: 1150px;
-    margin: 0 auto;
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(4, 1fr);
-
-    @media (max-width: 992px) { grid-template-columns: repeat(2, 1fr); }
-    @media (max-width: 580px) { grid-template-columns: 1fr; }
-  }
-
-  .why2-card {
-    text-align: left;
-    border: 1px solid #cde9d9; /* soft green border */
-    border-radius: 18px;
-    padding: 22px;
-    background: linear-gradient(180deg, #eef7f2 0%, #ffffff 100%);
-    box-shadow: 0 2px 0 #0e8e42 inset, 0 10px 24px rgba(15, 23, 42, 0.05);
-    transition: transform .18s ease, box-shadow .18s ease;
-
-    i {
-      font-size: 24px;
-      color: #0e8e42; /* brand green */
-      margin-bottom: 10px;
-    }
-
-    h3 {
-      margin: 0 0 6px;
-      font-weight: 800;
-      color: #0b1220;
-    }
-
-    p {
-      margin: 0;
-      color: #475569;
-    }
-
-    &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.10);
-    }
-  }
 }
 
 /* ---- Why Choose Us Two (Slider) ---- */
-.why-us-two {
-  padding: 56px 0 40px;
-
-  h2 {
-    text-align: center;
-    margin-bottom: 26px;
-    font-size: 26px;
-    font-weight: 700;
-  }
-}
-
 .why2-slider {
-  .slick-list { margin: 0 -12px; }
+  .slick-list { 
+    margin: 0 -12px;
+    padding: 20px 0; /* Prevent shadow clipping */
+  }
+  
   .slick-slide {
     padding: 0 12px;
     display: flex !important;
@@ -629,23 +579,43 @@
 }
 
 .why2-card {
-  background: #fff;
-  border: 1px solid rgba(17,17,17,.06);
-  border-radius: 16px;
+  background: linear-gradient(180deg, #eef7f2 0%, #ffffff 100%);
+  border: 1px solid #cde9d9;
+  border-radius: 18px;
   padding: 24px 18px;
   height: 100%;
   text-align: center;
-  box-shadow: 0 10px 26px rgba(15,17,21,.06);
+  box-shadow: 0 2px 0 #0e8e42 inset, 0 10px 24px rgba(15, 23, 42, 0.05);
   transition: transform .18s ease, box-shadow .18s ease;
   box-sizing: border-box;
   word-break: break-word;
   white-space: normal;
 
-  i { font-size: 30px; color: #0ea5e9; margin-bottom: 12px; display: inline-block; }
-  h3 { font-size: 16px; margin: 6px 0 10px; font-weight: 600; }
-  p { font-size: 14px; color: #4b5563; line-height: 1.5; }
+  i { 
+    font-size: 30px; 
+    color: #0e8e42; 
+    margin-bottom: 12px; 
+    display: inline-block; 
+  }
+  
+  h3 { 
+    font-size: 16px; 
+    margin: 6px 0 10px; 
+    font-weight: 800;
+    color: #0b1220;
+  }
+  
+  p { 
+    font-size: 14px; 
+    color: #475569; 
+    line-height: 1.5;
+    margin: 0;
+  }
 
-  &:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1); }
+  &:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 14px 28px rgba(15, 23, 42, 0.10); 
+  }
 }
 
 /* ===== MOBILE HERO ENHANCEMENT ===== */
